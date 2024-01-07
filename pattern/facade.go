@@ -134,3 +134,5 @@ func main() {
 
 // There is risk of making the facade a GodComponent (an anti-pattern) but if used mindfully - it's a fine way to isolate interaction with a complex system within a single "class"
 // If a single facade is becoming too large => it's possible to create additional facades
+
+// example of real-conditions usage - implement limited api for game engine renderer modules for artists/technical artists to easily create custom graphics effects
