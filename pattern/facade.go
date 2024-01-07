@@ -44,7 +44,8 @@ func (rpf *RenderPipelineFacade) SetPostProcessingState(state bool) {
 }
 
 func (rpf *RenderPipelineFacade) UpdateVertexData() (v *VertexData) {
-	rpf.vertexProcessing.CreateVertexData()
+	vData := rpf.vertexProcessing.CreateVertexData()
+	return vData
 }
 
 // modules of the complex system, required interactions with them are placed in
@@ -52,7 +53,8 @@ func (rpf *RenderPipelineFacade) UpdateVertexData() (v *VertexData) {
 type VertexProcessing struct {
 	vertices []float64
 }
-be fully representingtype VertexData struct {
+
+type VertexData struct {
 	vData []float64
 }
 
