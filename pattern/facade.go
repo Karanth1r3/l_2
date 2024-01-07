@@ -52,8 +52,7 @@ func (rpf *RenderPipelineFacade) UpdateVertexData() (v *VertexData) {
 type VertexProcessing struct {
 	vertices []float64
 }
-
-type VertexData struct {
+be fully representingtype VertexData struct {
 	vData []float64
 }
 
@@ -125,6 +124,10 @@ func main() {
 }
 
 // Facade pattern is useful to wrap a complex system functional in one place.
+// Client can learn how to use the facade with its (probably limited but not necessary) functionality instead of learning the whole complex system & its functions.
+
+// It is required to know how the system shall (and should ideally) be used to properly implement this pattern
 // "API" of the facade may not fully represent system capabilities but should be enough to use it within the required task context
-// There is risk of making the facade a GodComponent but if used mindfully - it's a fine way to isolate interaction with a complex system within a single "class"
+
+// There is risk of making the facade a GodComponent (an anti-pattern) but if used mindfully - it's a fine way to isolate interaction with a complex system within a single "class"
 // If a single facade is becoming too large => it's possible to create additional facades
