@@ -121,8 +121,8 @@ func main() {
 	// Using complex system modules through facade tools, "API"
 	vertexData := renderingPipelineFacade.UpdateVertexData()
 	renderingPipelineFacade.ModifyRasterizer(*vertexData) // doesn't make sense technically but who cares
-	renderingPipelineFacade.CallRasterize(*vertexData)    // it's too late to think up a new example
-	//                                                       guess i should've been more aware of the rendering pipeline guts at this point to make up better functions examples but i am not
+	renderingPipelineFacade.CallRasterize(*vertexData)    // i guess i should've been more aware of the rendering pipeline guts at this point to make up better functions examples but i am not
+	//
 
 }
 
