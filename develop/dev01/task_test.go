@@ -1,8 +1,9 @@
 package dev01_test
 
 import (
-	"dev01/task"
 	"testing"
+
+	"develop/dev01/task"
 )
 
 func TestPrintTime(t *testing.T) {

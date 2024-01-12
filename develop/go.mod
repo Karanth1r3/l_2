@@ -1,4 +1,4 @@
-module dev01
+module github.com/Karanth1r3/l_2/develop
 
 go 1.21.5
 
