@@ -62,6 +62,10 @@ func (c *CriminalCrew) setRobberyStrategy(r Robbery) {
 	c.robStrat = r
 }
 
+func (c *CriminalCrew) RobBank(b *Bank) {
+	c.robStrat.Rob(b)
+}
+
 // This one actually is not connected to strategy pattern but in this example it is necessary
 type Bank struct {
 	money, defenseSystemIndex, awareness int
@@ -85,9 +89,9 @@ func testStrategy() {
 
 	// Trying with the first strategy
 	crew := CriminalCrew{&stealthRob}
-	crew.robStrat.Rob(bank)
+	crew.RobBank(bank) // Should end as fail
 	// Changing strategy
 	crew.setRobberyStrategy(&armedRob)
-	crew.robStrat.Rob(bank) // This one should be successfull
+	crew.RobBank(bank) // This one should be successfull
 
 }
