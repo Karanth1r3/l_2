@@ -13,6 +13,7 @@ func (b *Button) press() {
 
 // Simplified app struct
 type Applictation struct {
+	text         string
 	clipboard    string
 	editors      []Editor
 	activeEditor Editor
@@ -31,7 +32,7 @@ func NewApplication(e *Editor) *Applictation {
 // App executes command sent from ui elements
 func (app *Applictation) executeCommand(c Command) {
 	c.execute()
-	app.history.push(c)
+	app.history.push(&c)
 }
 
 // App can undo commands with command history stack
@@ -76,12 +77,22 @@ type CommandsList struct {
 	PasteCommand
 }
 
+// Command stack for undo operations
 type CommandHistory struct {
 	commands []Command
 }
 
-func (ch *CommandHistory) push() {
+func (ch *CommandHistory) push(c *Command) {
+	ch.commands = append(ch.commands, *c)
+}
 
+func (ch *CommandHistory) pop() (com Command, isEmpty bool) {
+	if len(ch.commands) > 0 {
+		return nil, true
+	}
+	com = ch.commands[len(ch.commands)-1]
+	ch.commands = ch.commands[:len(ch.commands)-1]
+	return com, false
 }
 
 // interface has at least 1 func - execute
@@ -120,8 +131,22 @@ func (cp *CopyCommand) execute() {
 	cp.app.clipboard = cp.editor.getSelection()
 }
 
+func (cp *CopyCommand) undo() {
+
+}
+
 type CutCommand struct {
 	TemplateCommand
+}
+
+func NewCutCommand(app *Applictation, e *Editor) *CopyCommand {
+	return &CopyCommand{
+		TemplateCommand: TemplateCommand{
+			app:    *app,
+			editor: *e,
+			backup: "",
+		},
+	}
 }
 
 func (ct *CutCommand) execute() {
@@ -134,6 +159,16 @@ type PasteCommand struct {
 	TemplateCommand
 }
 
+func NewPasteCommand(app *Applictation, e *Editor) *CopyCommand {
+	return &CopyCommand{
+		TemplateCommand: TemplateCommand{
+			app:    *app,
+			editor: *e,
+			backup: "",
+		},
+	}
+}
+
 func (p *PasteCommand) execute() {
 	p.saveBackup()
 	p.editor.replaceSelection(p.app.clipboard)
@@ -143,6 +178,16 @@ type UndoCommand struct {
 	TemplateCommand
 }
 
+func NewUndoCommand(app *Applictation, e *Editor) *CopyCommand {
+	return &CopyCommand{
+		TemplateCommand: TemplateCommand{
+			app:    *app,
+			editor: *e,
+			backup: "",
+		},
+	}
+}
+
 func (uc *UndoCommand) undo() {
 	uc.app.undo()
 }
@@ -150,11 +195,23 @@ func (uc *UndoCommand) undo() {
 func testCommand() {
 	// initialize editor & application
 	editor := newEditor()
-	app = NewApplication(editor)
+	app := NewApplication(editor)
 
-	copy := NewCommand(app, editor)
-	paste := NewCommand()
+	copy := NewCopyCommand(app, editor)
+	paste := NewPasteCommand(app, editor)
+	cut := NewCutCommand(app, editor)
+	undo := NewUndoCommand(app, editor)
 	// initialize buttons & link initial commands (they can be replaced if needed)
 	copyButton := Button{command: copy}
+	pasteButton := Button{command: paste}
+	cutButton := Button{command: cut}
+	undoButton := Button{command: undo}
+
+	editor.selection = "initial"
+
+	copyButton.command.execute()  // adding "initial" to app cliboard
+	pasteButton.command.execute() // replacing initial with... initial
+	cutButton.command.execute()   // cutting initial
+	undoButton.command.execute()  // getting initial back (i hope so)
 
 }
