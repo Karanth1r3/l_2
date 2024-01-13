@@ -2,14 +2,17 @@ package dev04
 
 import (
 	"fmt"
+	"slices"
 	"sort"
 	"strings"
+	"sync"
 	"unicode/utf8"
 )
 
 func main() {
-	dict := []string{"Fuck", "Uckf", "Care", "cufk", "Тяпка", "пятка", "пятак"}
+	dict := []string{"Fuck", "Uckf", "Care", "cufk", "бука", "убак", "Тяпка", "куба", "пятка", "пятак", "fork", "rofk"}
 	dictToLower(dict)
+	fmt.Println(&dict)
 	t := getAnagramGroups(&dict)
 	fmt.Println(t)
 
@@ -27,30 +30,22 @@ func hasEqualRuneCount(s1, s2 string) bool {
 
 func getAnagramGroups(dct *[]string) (result map[string][]string) {
 	result = make(map[string][]string)
-
-	go func() {
-
-	}()
-out:
+	wg := sync.WaitGroup{}
+	mu := sync.Mutex{}
 	for _, elem := range *dct { // ...
-		for _, slc := range result {
-			for _, val := range slc {
-				if val == elem {
-					continue out
-				}
-			}
-		}
-
-		findAnagramGroup(elem, dct, result)
+		wg.Add(1)
+		go findAnagramGroup(&wg, &mu, elem, dct, result)
 	}
+	wg.Wait()
 	return result
 }
 
-func findAnagramGroup(word string, dct *[]string, anagrams map[string][]string) {
+func findAnagramGroup(wg *sync.WaitGroup, mu *sync.Mutex, word string, dct *[]string, anagrams map[string][]string) {
+	mu.Lock()
 	result := make(map[string][]string)
-	foundIndexes := []int{}
-
-	for index, elem := range *dct {
+	found := []string{}
+	//fmt.Println(word)
+	for _, elem := range *dct {
 		if elem == word { // if words are equal - they aren't anagrams
 			continue
 		}
@@ -67,7 +62,7 @@ func findAnagramGroup(word string, dct *[]string, anagrams map[string][]string) 
 		})
 		if string(orChars) == string(chars) { // if sorted strings are equal - they are anagrams. Check for original word & original element equality was before
 			result[word] = append(result[word], elem)
-			foundIndexes = append(foundIndexes, index)
+			found = append(found, elem)
 		}
 	}
 	if len(result[word]) > 1 { // if  group has at least 2 elements, it can be added to anagrams map
@@ -76,22 +71,16 @@ func findAnagramGroup(word string, dct *[]string, anagrams map[string][]string) 
 		anagrams[word] = rs
 	}
 
-	/*// block for deleting found elements from dictionary
-	  for _, e := range foundIndexes {
-	    *dct = slices.Delete(*dct, e)
-	  }
-	*/
-	/*
-	   for _, e := range result[word] {
-	     for i, e2 := range *dct {
-	       if e == e2 {
-	         //fmt.Println(*dct, i)
-	         *dct = append((*dct)[:i], (*dct)[i+1:]...)
-	         //fmt.Println("deleted")
-	       }
-	     }
-	   }
-	*/
-	fmt.Println(*dct)
+	for _, e := range found {
+		*dct = slices.DeleteFunc(*dct, func(s string) bool {
+			return s == e
+		})
+	}
+	*dct = slices.DeleteFunc(*dct, func(s string) bool {
+		return s == word
+	})
 
+	fmt.Println(*dct)
+	mu.Unlock()
+	wg.Done()
 }
