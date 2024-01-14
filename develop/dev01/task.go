@@ -7,11 +7,11 @@ import (
 )
 
 func main() {
-	PrintTime()
+	PrintTime("0.beevik-ntp.pool.ntp.org")
 }
 
-func PrintTime() (string, error) {
-	time, err := ntp.Time("0.beevik-ntp.pool.ntp.org")
+func PrintTime(address string) (string, error) {
+	time, err := ntp.Time(address)
 	if err != nil {
 		return "", err
 	}

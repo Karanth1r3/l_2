@@ -7,13 +7,32 @@ import (
 )
 
 func TestTime(t *testing.T) {
-	r, err := dev01.PrintTime()
 
-	if err != nil {
-		t.Fatal(err)
+	tests := []struct {
+		address string
+		ok      bool
+	}{
+		{
+			address: "0.beevik-ntp.pool.ntp.org",
+			ok:      true,
+		},
+		{
+			address: "",
+			ok:      false,
+		},
 	}
-	unexpected := ""
-	if r == unexpected {
-		t.Fatal("unexpected behaviour")
+
+	for _, test := range tests {
+		t.Run(test.address, func(t *testing.T) {
+			res, err := dev01.PrintTime(test.address)
+			if err != nil {
+				if test.ok {
+					t.Fatal(err)
+				}
+			}
+			if res == "" && test.ok {
+				t.Fatal("unexpected behaviour")
+			}
+		})
 	}
 }
