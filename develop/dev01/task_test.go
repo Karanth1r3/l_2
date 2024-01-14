@@ -3,16 +3,17 @@ package dev01_test
 import (
 	"testing"
 
-	"develop/dev01/task"
+	"github.com/Karanth1r3/l_2/develop/dev01"
 )
 
-func TestPrintTime(t *testing.T) {
-	s, err := task.PrintTime()
+func TestTime(t *testing.T) {
+	r, err := dev01.PrintTime()
+
 	if err != nil {
 		t.Fatal(err)
 	}
 	unexpected := ""
-	if s == unexpected {
-		t.Fatal("Unexpected")
+	if r == unexpected {
+		t.Fatal("unexpected behaviour")
 	}
 }
