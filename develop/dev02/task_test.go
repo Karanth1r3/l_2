@@ -38,6 +38,21 @@ func TestDev02(t *testing.T) {
 			expected:  "eeeee",
 			isOk:      true,
 		},
+		{
+			inputData: `ew\\5r\1k`,
+			expected:  `ew\\\\\r1k`,
+			isOk:      true,
+		},
+		{
+			inputData: `ew\\5r2k`,
+			expected:  `ew\\\\\rrk`,
+			isOk:      true,
+		},
+		{
+			inputData: "0vsvvv",
+			expected:  "trash",
+			isOk:      false,
+		},
 	}
 	for _, test := range tests {
 		t.Run(test.inputData, func(t *testing.T) {

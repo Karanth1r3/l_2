@@ -8,7 +8,10 @@ import (
 )
 
 func main() {
-	(UnpackString("ew4r2k"))
+	(UnpackString(`ew4r2k`))
+	fmt.Println(UnpackString(`ew\\5r\2k`))
+
+	fmt.Println(UnpackString(`ew\\5r2k`))
 }
 
 func loopChar(r rune, count int) []rune {
@@ -44,10 +47,34 @@ func UnpackString(s string) (string, error) {
 	for i := 0; i < ln; i++ {
 		if i < ln-1 {
 			switch {
+			// Should have thought about escapes from the beginning i guess. This looks fucked up now
+			case rs[i] == '\\' && !unicode.IsDigit(rs[i+2]):
+				result = append(result, rs[i+1])
+				i++
 
-			case !unicode.IsDigit(rs[i]) && !unicode.IsDigit(rs[i+1]):
+			case rs[i] == '\\' && unicode.IsDigit(rs[i+2]):
+
+				temp := make([]rune, 0)
+				for j := i + 2; j < ln; j++ {
+					if unicode.IsDigit(rs[j]) {
+						temp = append(temp, rs[j])
+
+					} else {
+						break
+					}
+				}
+				fmt.Println(temp)
+				num, err := strconv.Atoi(string(temp))
+				if err != nil {
+					fmt.Println("Reading symbol count went wrong")
+				}
+				result = append(result, loopChar(rs[i+1], num)...)
+				i++
+
+			case !unicode.IsDigit(rs[i]) && !unicode.IsDigit(rs[i+1]) && rs[i] != '\\':
 				result = append(result, rs[i])
-			case !unicode.IsDigit(rs[i]) && unicode.IsDigit(rs[i+1]):
+
+			case !unicode.IsDigit(rs[i]) && unicode.IsDigit(rs[i+1]) && rs[i] != '\\':
 				temp := make([]rune, 0)
 				for j := i + 1; j < ln; j++ {
 					if unicode.IsDigit(rs[j]) {
