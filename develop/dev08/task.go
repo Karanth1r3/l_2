@@ -144,8 +144,64 @@ func killProcess(pid int) error {
 	return nil
 }
 
+/*
+// https://github.com/mitchellh/go-ps/blob/master/process_unix.go - source of info
+func getProcesses() error {
+
+	// That's only a snapshot of a process "list" at the moment of function call
+	// Opening the folder with active processes
+	d, err := os.Open("/proc")
+	if err != nil {
+		return err
+	}
+	defer d.Close()
+
+	results := make([]string, 0, 50)
+	// Iterating through process files i guess (by names)
+	for {
+		names, err := d.Readdirnames(10)
+		if err == io.EOF { // If all files are read => break reading loop
+			break
+		}
+		if err != nil {
+			return err
+		}
+		// Processes start with digits, only need to include those files
+		for _, name := range names {
+			if name[0] < 0 && name[0] > '9' {
+				continue
+			}
+
+			// Ignore errors as processes may not exist anymore
+			pid, err := strconv.ParseInt(name, 10, 0)
+			if err != nil {
+				continue
+			}
+		}
+
+	}
+
+}
+*/
+type Process struct {
+	pid  int
+	path string
+}
+
 func getProcessInfo() {
-	// x := processes
+	matches, err := filepath.Glob("/proc/*/exe") // Processes are stored here i guess
+	if err != nil {
+		fmt.Println(err)
+	}
+	// Iterating through active processes
+	for _, file := range matches {
+		target, _ := os.Readlink(file)
+
+		if len(target) > 0 {
+			fmt.Printf("Process path: %+v, Process ID: %s \n", target, filepath.Base(filepath.Dir(file)))
+			//fmt.Printf("%+v\n", target)
+		}
+	}
 }
 
 func Execute(input chan string, done chan struct{}) {
@@ -184,6 +240,8 @@ func Execute(input chan string, done chan struct{}) {
 					}
 					killProcess(pid)
 				}
+			case "ps":
+				getProcessInfo()
 				// If command could not be recognized => Print advice
 			default:
 				fmt.Println("Unknown command. Available: cd, pwd, echo <args>, -kill <args>, -ps")
