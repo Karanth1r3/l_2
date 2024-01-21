@@ -71,12 +71,15 @@ func TestDev02(t *testing.T) {
 				t.Fatal("unexpected behaviour")
 			}
 			if res != "" && !test.isOk {
-				t.Fatal("Probably smth wrong")
+				t.Fatal("probably smth wrong")
 			}
 			if len(test.inputData) > 0 {
 				if unicode.IsDigit(rune(test.inputData[0])) && test.isOk {
 					t.Fatal("unexpected behaviour")
 				}
+			}
+			if res != test.expected && test.isOk {
+				t.Fatal("unexpected behaviour")
 			}
 		})
 	}
