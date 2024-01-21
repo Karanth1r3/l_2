@@ -8,7 +8,6 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"sort"
 	"strings"
 )
 
@@ -131,26 +130,19 @@ func Grep() {
 	ignoreCase := flag.Bool("i", false, "ignore case")
 	invert := flag.Bool("v", false, "exclude instead of matching")
 	fixed := flag.Bool("F", false, "find only exact match to string")
-	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
+	//	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
 	flag.Parse()
 
 	//filePath = path
 	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
-	if *unique {
-		lines = removeDuplicates(lines)
-	}
+
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
 	// If reverse order flag is true - sort in reverse order
-	if *reverse {
-		sort.Sort(sort.Reverse(sort.StringSlice(lines)))
-	} else {
-		sort.Strings(lines)
-	}
 
 	fmt.Println(lines)
 	err = writeLines(filePath, lines)
