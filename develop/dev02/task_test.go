@@ -50,7 +50,7 @@ func TestDev02(t *testing.T) {
 		},
 		{
 			inputData: "0vsvvv",
-			expected:  "trash",
+			expected:  "",
 			isOk:      false,
 		},
 	}
