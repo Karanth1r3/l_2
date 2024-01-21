@@ -193,12 +193,14 @@ func getProcessInfo() {
 	if err != nil {
 		fmt.Println(err)
 	}
+	id := "-1"
 	// Iterating through active processes
 	for _, file := range matches {
 		target, _ := os.Readlink(file)
-
-		if len(target) > 0 {
-			fmt.Printf("Process path: %+v, Process ID: %s \n", target, filepath.Base(filepath.Dir(file)))
+		id = filepath.Base(filepath.Dir(file))
+		if len(target) > 0 && id[0] > '0' && id[0] < '9' {
+			fmt.Println("--------------------------------------------------------------")
+			fmt.Printf("Process path: %+v \n, Process ID: %s \n", target, filepath.Base(filepath.Dir(file)))
 			//fmt.Printf("%+v\n", target)
 		}
 	}
