@@ -1,4 +1,4 @@
-package main
+package dev04
 
 import (
 	"fmt"
@@ -11,24 +11,26 @@ import (
 
 func main() {
 	dict := []string{"Fuck", "Uckf", "Care", "cufk", "бука", "убак", "Тяпка", "куба", "пятка", "пятак", "fork", "rofk"}
-	dictToLower(dict)
-	fmt.Println(&dict)
-	t := getAnagramGroups(&dict)
+	//dictToLower(dict)
+	//fmt.Println(&dict)
+	t := GetAnagramGroups(&dict)
 	fmt.Println(t)
 
 }
 
-func dictToLower(dict []string) {
+func dictToLower(dict []string) []string {
 	for i := 0; i < len(dict); i++ {
 		dict[i] = strings.ToLower(dict[i])
 	}
+	return dict
 }
 
 func hasEqualRuneCount(s1, s2 string) bool {
 	return utf8.RuneCountInString(s1) == utf8.RuneCountInString(s2)
 }
 
-func getAnagramGroups(dct *[]string) (result map[string][]string) {
+func GetAnagramGroups(dct *[]string) (result map[string][]string) {
+	*dct = dictToLower(*dct)
 	result = make(map[string][]string)
 	wg := sync.WaitGroup{}
 	mu := sync.Mutex{}
@@ -81,7 +83,6 @@ func findAnagramGroup(wg *sync.WaitGroup, mu *sync.Mutex, word string, dct *[]st
 		return s == word
 	})
 
-	fmt.Println(*dct)
 	mu.Unlock()
 	wg.Done()
 }
