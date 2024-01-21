@@ -68,6 +68,7 @@ func findAnagramGroup(wg *sync.WaitGroup, mu *sync.Mutex, word string, dct *[]st
 	if len(result[word]) > 1 { // if  group has at least 2 elements, it can be added to anagrams map
 		rs := []string{}
 		rs = append(rs, result[word]...)
+		sort.StringSlice.Sort(rs)
 		anagrams[word] = rs
 	}
 
