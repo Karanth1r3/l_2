@@ -53,6 +53,11 @@ func TestDev02(t *testing.T) {
 			expected:  "",
 			isOk:      false,
 		},
+		{
+			inputData: "v0svvv",
+			expected:  "svvv",
+			isOk:      true,
+		},
 	}
 	for _, test := range tests {
 		t.Run(test.inputData, func(t *testing.T) {
@@ -64,6 +69,9 @@ func TestDev02(t *testing.T) {
 			}
 			if res == "" && test.isOk {
 				t.Fatal("unexpected behaviour")
+			}
+			if res != "" && !test.isOk {
+				t.Fatal("Probably smth wrong")
 			}
 			if len(test.inputData) > 0 {
 				if unicode.IsDigit(rune(test.inputData[0])) && test.isOk {

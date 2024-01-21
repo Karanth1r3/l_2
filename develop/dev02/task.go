@@ -11,7 +11,7 @@ func main() {
 	(UnpackString(`ew4r2k`))
 	fmt.Println(UnpackString(`ew\\5r\2k`))
 
-	fmt.Println(UnpackString(`ew\\5r2k`))
+	fmt.Println(UnpackString(`ew\\0r2k`))
 }
 
 func loopChar(r rune, count int) []rune {
