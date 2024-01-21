@@ -6,11 +6,14 @@ import (
 )
 
 func or(channels ...<-chan interface{}) <-chan interface{} {
-
+	// Create "united" channel instance
 	orCh := make(chan interface{})
+	// Iterating through all input  channels
 	for _, c := range channels {
+		// Goroutine will be blocked until something is put into at leas one of the channels
 		go func(c <-chan interface{}) {
 			<-c
+			// If at least 1 channels is done, close united channel
 			close(orCh)
 		}(c)
 	}
@@ -18,6 +21,7 @@ func or(channels ...<-chan interface{}) <-chan interface{} {
 	return orCh
 }
 
+// Single signal channel example
 func sig(after time.Duration) <-chan interface{} {
 	c := make(chan interface{})
 	go func() {

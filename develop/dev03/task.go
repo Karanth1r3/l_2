@@ -114,12 +114,24 @@ func SortFile(filePath string) {
 
 	// Declaring & parsing flags
 	var column int
+	var path string
+	params := os.Args
+
+	if len(params) == 1 {
+		fmt.Printf("Usage: ./sort (path_to_file) (flags)")
+		return
+	}
+	paths := strings.Split(filePath, "")
+	for _, elem := range path {
+		path += 
+	}
+
 	reverse := flag.Bool("r", false, "sort in reverse order")
 	unique := flag.Bool("u", false, "do not write repeating strings")
 	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
 	flag.Parse()
 
-	filePath = "/home/vboxuser/go/src/github.com/Karanth1r3/l_2/develop/dev03/data.txt"
+	filePath = path
 	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
 	if *unique {
