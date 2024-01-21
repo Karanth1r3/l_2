@@ -12,6 +12,7 @@ func or(channels ...<-chan interface{}) <-chan interface{} {
 	for _, c := range channels {
 		// Goroutine will be blocked until something is put into at leas one of the channels
 		go func(c <-chan interface{}) {
+			//If data is received => no need to put it anywhere, goroutine is blocked until receiving c
 			<-c
 			// If at least 1 channels is done, close united channel
 			close(orCh)
