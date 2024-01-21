@@ -1,4 +1,4 @@
-package main
+package dev02
 
 import (
 	"fmt"
@@ -44,6 +44,7 @@ func UnpackString(s string) (string, error) {
 	for i := 0; i < ln; i++ {
 		if i < ln-1 {
 			switch {
+
 			case !unicode.IsDigit(rs[i]) && !unicode.IsDigit(rs[i+1]):
 				result = append(result, rs[i])
 			case !unicode.IsDigit(rs[i]) && unicode.IsDigit(rs[i+1]):

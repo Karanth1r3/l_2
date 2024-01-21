@@ -76,7 +76,7 @@ func findAnagramGroup(wg *sync.WaitGroup, mu *sync.Mutex, word string, dct *[]st
 			return s == e
 		})
 	}
-	*dct = slices.DeleteFunc(*dct, func(s string) bool {
+	*dct = slices.DeleteFunc(*dct, func(s string) bool { // Can delete only [0] actually
 		return s == word
 	})
 
