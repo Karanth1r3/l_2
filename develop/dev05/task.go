@@ -5,7 +5,9 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 )
@@ -17,15 +19,7 @@ func checkError(e error) {
 }
 
 func main() {
-	SortFile("/home/vboxuser/go/src/github.com/Karanth1r3/l_2/develop/dev03/data.txt")
-}
-
-func dev03(filePath string) {
-	data, err := os.ReadFile("/home/vboxuser/go/src/github.com/Karanth1r3/l_2/develop/dev03/data.txt")
-	//	file, err := os.Open(filePath)
-	checkError(err)
-
-	fmt.Println(data)
+	Grep()
 }
 
 func removeDuplicates[T comparable](arr []T) []T {
@@ -110,16 +104,37 @@ func divideByColumns(s string) (result []string) {
 	return result
 }
 
-func SortFile(filePath string) {
+func Grep() {
+	// Checking if cmd arguments are present. If they aren't - Print usage advice
+	params := os.Args
+	if len(params) == 1 {
+		fmt.Printf("Usage: ./sort (path_to_file) (flags)")
+		return
+	}
+	// Fnal path variable
+	var filePath string
+	// Name of the file is the first argument
+	file := os.Args[1]
+	// Getting current directory
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Splitting & reassembling path for cross-OS support
+	pathSplit := filepath.SplitList(path)
+	for _, dir := range pathSplit {
+		filePath = filepath.Join(dir, file)
+	}
 
 	// Declaring & parsing flags
-	var column int
-	reverse := flag.Bool("r", false, "sort in reverse order")
-	unique := flag.Bool("u", false, "do not write repeating strings")
+	var before, after, context, count int
+	ignoreCase := flag.Bool("i", false, "ignore case")
+	invert := flag.Bool("v", false, "exclude instead of matching")
+	fixed := flag.Bool("F", false, "find only exact match to string")
 	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
 	flag.Parse()
 
-	filePath = "/home/vboxuser/go/src/github.com/Karanth1r3/l_2/develop/dev03/data.txt"
+	//filePath = path
 	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
 	if *unique {

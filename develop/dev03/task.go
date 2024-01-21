@@ -5,7 +5,9 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 )
@@ -17,7 +19,7 @@ func checkError(e error) {
 }
 
 func main() {
-	SortFile("/home/vboxuser/go/src/github.com/Karanth1r3/l_2/develop/dev03/data.txt")
+	SortFile()
 }
 
 func dev03(filePath string) {
@@ -110,28 +112,36 @@ func divideByColumns(s string) (result []string) {
 	return result
 }
 
-func SortFile(filePath string) {
-
-	// Declaring & parsing flags
-	var column int
-	var path string
+func SortFile() {
+	// Checking if cmd arguments are present. If they aren't - Print usage advice
 	params := os.Args
-
 	if len(params) == 1 {
 		fmt.Printf("Usage: ./sort (path_to_file) (flags)")
 		return
 	}
-	paths := strings.Split(filePath, "")
-	for _, elem := range path {
-		path += 
+	// Fnal path variable
+	var filePath string
+	// Name of the file is the first argument
+	file := os.Args[1]
+	// Getting current directory
+	path, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	// Splitting & reassembling path for cross-OS support
+	pathSplit := filepath.SplitList(path)
+	for _, dir := range pathSplit {
+		filePath = filepath.Join(dir, file)
 	}
 
+	// Declaring & parsing flags
+	var column int
 	reverse := flag.Bool("r", false, "sort in reverse order")
 	unique := flag.Bool("u", false, "do not write repeating strings")
 	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
 	flag.Parse()
 
-	filePath = path
+	//filePath = path
 	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
 	if *unique {

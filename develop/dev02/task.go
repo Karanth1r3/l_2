@@ -51,7 +51,6 @@ func UnpackString(s string) (string, error) {
 				temp := make([]rune, 0)
 				for j := i + 1; j < ln; j++ {
 					if unicode.IsDigit(rs[j]) {
-						//	fmt.Println(string(rs[i]))
 						temp = append(temp, rs[j])
 						//	i++
 					} else {
@@ -62,9 +61,7 @@ func UnpackString(s string) (string, error) {
 				if err != nil {
 					fmt.Println("Reading symbol count went wrong")
 				}
-				fmt.Println(num)
 				result = append(result, loopChar(rs[i], num)...)
-				//	fmt.Println(string(rs))
 			}
 		} else if i == ln-1 {
 			if !unicode.IsDigit(rs[i]) {
