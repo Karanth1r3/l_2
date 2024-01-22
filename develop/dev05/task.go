@@ -8,6 +8,8 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"regexp"
+	"sort"
 	"strings"
 )
 
@@ -103,17 +105,124 @@ func divideByColumns(s string) (result []string) {
 	return result
 }
 
+func printGrep(lines []string, input string, after, before, context int, ignoreCase, invert, fixed, lineNum, count bool) {
+
+	m := make(map[int]string)
+	var matched bool
+	linesCount := 0
+	if context > 0 {
+		after = context
+		before = context
+	}
+	r, err := regexp.Compile(input)
+	/*
+		var baseCondition bool
+		var noCompile bool
+	*/
+	if err != nil {
+		fmt.Println(err)
+		//	noCompile = true
+	}
+
+	for index, line := range lines {
+		matched = false
+		// If searching for exact matches
+		if r.MatchString(line) {
+			// No time to think, let it be shit
+			if fixed {
+				if ignoreCase {
+					if !strings.EqualFold(line, input) {
+						continue
+					} else {
+						matched = true
+					}
+				} else {
+					if line != input {
+						continue
+					} else {
+						matched = true
+					}
+				}
+			} else {
+				matched = true
+			}
+
+			linesCount++
+		}
+		if invert && !matched {
+			linesCount++
+			m[index] = line
+		}
+		if !invert && matched {
+			linesCount++
+			m[index] = line
+		}
+	}
+	// If only matches count is required - print it and drop other output
+	if count {
+		fmt.Println(linesCount)
+		return
+	}
+	indexes := make([]int, len(m))
+	idx := 0
+	for k := range m {
+		indexes[idx] = k
+		idx++
+	}
+	sort.IntSlice.Sort(indexes)
+	for k := range indexes {
+		printAround(lines, indexes[k], before, after, lineNum)
+	}
+}
+
+func printAround(lines []string, index, before, after int, lineNum bool) {
+	// Before/after/context handle
+	// Printing before
+	for j := index - 1; j > 0 && before > 0; j-- {
+		printLine(lines[j], j, lineNum)
+		before--
+	}
+	// Printing main line
+	printLine(lines[index], index, lineNum)
+	// Printing after
+	for j := index + 1; j < len(lines) && after > 0; j++ {
+		printLine(lines[j], j, lineNum)
+		after--
+	}
+}
+
+func printLine(line string, index int, lineNum bool) {
+	var s string
+	if lineNum {
+		s = fmt.Sprintf("%d:", index+1) // Indexing of lines in grep starts with 1 as i recall (it may be false)
+		s = fmt.Sprintf("%s%s", s, line)
+	} else {
+		s = line
+	}
+	fmt.Printf(s)
+}
+
 func Grep() {
 	// Checking if cmd arguments are present. If they aren't - Print usage advice
 	params := os.Args
 	if len(params) == 1 {
-		fmt.Printf("Usage: ./sort (path_to_file) (flags)")
+		fmt.Printf("Usage: ./grep (flags) (string_pattern) (path_to_file)")
 		return
 	}
+
 	// Fnal path variable
 	var filePath string
+	var firstIndex, secondIndex int
 	// Name of the file is the first argument
-	file := os.Args[1]
+	for i := 1; i < len(params); i++ {
+		if !strings.HasPrefix(params[i], "-") {
+			firstIndex = i
+			break
+		}
+	}
+	secondIndex = firstIndex + 1
+	input := os.Args[firstIndex]
+	file := os.Args[secondIndex]
 	// Getting current directory
 	path, err := os.Getwd()
 	if err != nil {
@@ -126,13 +235,18 @@ func Grep() {
 	}
 
 	// Declaring & parsing flags
-	var before, after, context, count int
+	var before, after, context int
 	ignoreCase := flag.Bool("i", false, "ignore case")
 	invert := flag.Bool("v", false, "exclude instead of matching")
 	fixed := flag.Bool("F", false, "find only exact match to string")
+	lineNum := flag.Bool("n", false, "print line number")
+	count := flag.Bool("c", false, "print lines count")
+	flag.IntVar(&after, "A", 0, "print n lines after match")
+	flag.IntVar(&before, "B", 0, "print n lines before match")
+	flag.IntVar(&context, "C", 0, "print n lines before and after match")
+
 	//	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
 	flag.Parse()
-
 	//filePath = path
 	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
@@ -142,12 +256,8 @@ func Grep() {
 		os.Exit(1)
 	}
 
+	printGrep(lines, input, after, before, context, *ignoreCase, *invert, *fixed, *lineNum, *count)
 	// If reverse order flag is true - sort in reverse order
 
-	fmt.Println(lines)
-	err = writeLines(filePath, lines)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
+	// fmt.Println(lines)
 }
