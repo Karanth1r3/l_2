@@ -72,7 +72,13 @@ func PrintGrep(lines []string, input string, after, before, context int, ignoreC
 		after = context
 		before = context
 	}
-	r, err := regexp.Compile("(?i)" + input) // case insensitive by default with checks in deeper block
+	var expr string
+	if ignoreCase {
+		expr = "(?i)" + input
+	} else {
+		expr = input
+	}
+	r, err := regexp.Compile(expr) // case insensitive by default with checks in deeper block
 	/*
 		var baseCondition bool
 		var noCompile bool
@@ -216,7 +222,5 @@ func Grep() {
 	}
 
 	PrintGrep(lines, input, after, before, context, *ignoreCase, *invert, *fixed, *lineNum, *count)
-	// If reverse order flag is true - sort in reverse order
 
-	// fmt.Println(lines)
 }

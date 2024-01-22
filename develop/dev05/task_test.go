@@ -76,7 +76,7 @@ func TestGrep(t *testing.T) {
 			lineNum:        true, // Will make no difference
 			count:          false,
 			isOk:           true,
-			expectedResult: map[int]string{1: "Uckf", 2: "Care", 3: "cufk", 4: "бука", 5: "убак", 6: "Тяпка", 7: "куба", 8: "пятка", 9: "пятак", 10: "fork", 11: "rofk"},
+			expectedResult: map[int]string{0: "Fuck", 1: "Uckf", 2: "Care", 3: "cufk", 4: "бука", 5: "убак", 6: "Тяпка", 7: "куба", 8: "пятка", 9: "пятак", 10: "fork", 11: "rofk"},
 		},
 	}
 	for _, test := range tests {
@@ -88,6 +88,9 @@ func TestGrep(t *testing.T) {
 			if !reflect.DeepEqual(m, test.expectedResult) && test.isOk {
 				s := fmt.Sprintf("got: %v, expected: %v", m, test.expectedResult)
 				t.Fatal("unexpected result", s)
+			}
+			if !reflect.DeepEqual(m, test.expectedResult) && !test.isOk {
+				t.Fatal("unexpected result")
 			}
 		})
 	}
