@@ -14,29 +14,8 @@ import (
 	"strings"
 )
 
-func checkError(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
-
 func main() {
 	Grep()
-}
-
-func removeDuplicates[T comparable](arr []T) []T {
-	if len(arr) < 2 {
-		return arr
-	}
-	allKeys := make(map[T]bool)
-	list := []T{}
-	for _, elem := range arr {
-		if _, value := allKeys[elem]; !value {
-			allKeys[elem] = true
-			list = append(list, elem)
-		}
-	}
-	return list
 }
 
 func readLines(filePath string) (lines []string, err error) {
