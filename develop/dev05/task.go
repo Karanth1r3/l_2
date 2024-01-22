@@ -1,4 +1,4 @@
-package main
+package dev05
 
 import (
 	"bufio"
@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -47,13 +48,9 @@ func readLines(filePath string) (lines []string, err error) {
 
 	r := bufio.NewReader(f)
 	for {
-		const div = '\n'               // Division char
-		line, err := r.ReadString(div) // Reading until meeting div-char
+		const div = '\n'             // Division char
+		line, _, err := r.ReadLine() // Reading until meeting div-char
 		if err == nil || len(line) > 0 {
-			if err != nil {
-				line += string(div)
-			}
-			lines = append(lines, line)
 			/*
 				if unique {
 					hasValue := false
@@ -76,6 +73,7 @@ func readLines(filePath string) (lines []string, err error) {
 			}
 			return nil, err
 		}
+		lines = append(lines, string(line))
 	}
 	return lines, nil
 }
@@ -100,12 +98,7 @@ func writeLines(filePath string, lines []string) (err error) {
 	return nil
 }
 
-func divideByColumns(s string) (result []string) {
-	result = strings.Split(s, " ")
-	return result
-}
-
-func printGrep(lines []string, input string, after, before, context int, ignoreCase, invert, fixed, lineNum, count bool) {
+func PrintGrep(lines []string, input string, after, before, context int, ignoreCase, invert, fixed, lineNum, count bool) map[int]string {
 
 	m := make(map[int]string)
 	var matched bool
@@ -114,7 +107,7 @@ func printGrep(lines []string, input string, after, before, context int, ignoreC
 		after = context
 		before = context
 	}
-	r, err := regexp.Compile(input)
+	r, err := regexp.Compile("(?i)" + input) // case insensitive by default with checks in deeper block
 	/*
 		var baseCondition bool
 		var noCompile bool
@@ -123,15 +116,15 @@ func printGrep(lines []string, input string, after, before, context int, ignoreC
 		fmt.Println(err)
 		//	noCompile = true
 	}
-
 	for index, line := range lines {
 		matched = false
 		// If searching for exact matches
 		if r.MatchString(line) {
 			// No time to think, let it be shit
 			if fixed {
+
 				if ignoreCase {
-					if !strings.EqualFold(line, input) {
+					if !strings.EqualFold(input, line) {
 						continue
 					} else {
 						matched = true
@@ -147,7 +140,6 @@ func printGrep(lines []string, input string, after, before, context int, ignoreC
 				matched = true
 			}
 
-			linesCount++
 		}
 		if invert && !matched {
 			linesCount++
@@ -161,7 +153,7 @@ func printGrep(lines []string, input string, after, before, context int, ignoreC
 	// If only matches count is required - print it and drop other output
 	if count {
 		fmt.Println(linesCount)
-		return
+		return map[int]string{0: strconv.Itoa(linesCount)} // This crap is for testing purposes, sorry
 	}
 	indexes := make([]int, len(m))
 	idx := 0
@@ -173,6 +165,7 @@ func printGrep(lines []string, input string, after, before, context int, ignoreC
 	for k := range indexes {
 		printAround(lines, indexes[k], before, after, lineNum)
 	}
+	return m // FOR TESTING
 }
 
 func printAround(lines []string, index, before, after int, lineNum bool) {
@@ -199,7 +192,11 @@ func printLine(line string, index int, lineNum bool) {
 	} else {
 		s = line
 	}
-	fmt.Printf(s)
+	fmt.Printf("%s\n", s)
+}
+
+func TestGrep() {
+
 }
 
 func Grep() {
@@ -256,7 +253,7 @@ func Grep() {
 		os.Exit(1)
 	}
 
-	printGrep(lines, input, after, before, context, *ignoreCase, *invert, *fixed, *lineNum, *count)
+	PrintGrep(lines, input, after, before, context, *ignoreCase, *invert, *fixed, *lineNum, *count)
 	// If reverse order flag is true - sort in reverse order
 
 	// fmt.Println(lines)
