@@ -54,13 +54,9 @@ func readLines(filePath string) (lines []string, err error) {
 
 	r := bufio.NewReader(f)
 	for {
-		const div = '\n'               // Division char
-		line, err := r.ReadString(div) // Reading until meeting div-char
+		const div = '\n'             // Division char
+		line, _, err := r.ReadLine() // Reading until meeting div-char
 		if err == nil || len(line) > 0 {
-			if err != nil {
-				line += string(div)
-			}
-			lines = append(lines, line)
 			/*
 				if unique {
 					hasValue := false
@@ -83,6 +79,7 @@ func readLines(filePath string) (lines []string, err error) {
 			}
 			return nil, err
 		}
+		lines = append(lines, string(line))
 	}
 	return lines, nil
 }
