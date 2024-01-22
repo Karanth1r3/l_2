@@ -30,21 +30,6 @@ func readLines(filePath string) (lines []string, err error) {
 		const div = '\n'             // Division char
 		line, _, err := r.ReadLine() // Reading until meeting div-char
 		if err == nil || len(line) > 0 {
-			/*
-				if unique {
-					hasValue := false
-					for _, elem := range lines {
-						if elem == line {
-							hasValue = true
-						}
-					}
-					if !hasValue {
-						lines = append(lines, line)
-					}
-				} else {
-					lines = append(lines, line)
-				}
-			*/
 		}
 		if err != nil {
 			if err == io.EOF {
