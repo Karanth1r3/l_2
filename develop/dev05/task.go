@@ -98,6 +98,7 @@ func writeLines(filePath string, lines []string) (err error) {
 	return nil
 }
 
+// PrintGrep - output func for grep (input data is processed && printed here)
 func PrintGrep(lines []string, input string, after, before, context int, ignoreCase, invert, fixed, lineNum, count bool) map[int]string {
 
 	m := make(map[int]string)
@@ -195,10 +196,7 @@ func printLine(line string, index int, lineNum bool) {
 	fmt.Printf("%s\n", s)
 }
 
-func TestGrep() {
-
-}
-
+// Grep func to call in main & read input
 func Grep() {
 	// Checking if cmd arguments are present. If they aren't - Print usage advice
 	params := os.Args
