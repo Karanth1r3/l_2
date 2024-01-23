@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -96,7 +97,7 @@ func writeLines(filePath string, lines []string) (err error) {
 	w := bufio.NewWriter(f)
 	defer w.Flush()
 	for _, line := range lines {
-		_, err := w.WriteString(line)
+		_, err := w.WriteString(line + "\n")
 		if err != nil {
 			return err
 		}
@@ -109,17 +110,66 @@ func divideByColumns(s string) (result []string) {
 	return result
 }
 
+/*
+	func sortNum(lines []string) []string {
+		sort.Slice(data, func(i, j int) bool {
+			val, err := strconv.ParseInt(data[i], 10, 0)
+			if err != nil {
+
+				return false
+			}
+			b, err := strconv.ParseInt(data[j], 10, 0)
+			if err != nil {
+
+				return false
+			}
+			return a < b
+		})
+	}
+*/
+func selectColumn(lines []string, index int) []string {
+
+	for lidx, line := range lines {
+		parts := strings.Split(line, " ")
+		for i, part := range parts {
+			//		contains := false
+			if i == index {
+				lines[lidx] = part
+			}
+		}
+	}
+	return lines
+}
+
 func SortFile() {
 	// Checking if cmd arguments are present. If they aren't - Print usage advice
 	params := os.Args
 	if len(params) == 1 {
-		fmt.Printf("Usage: ./sort (path_to_file) (flags)")
+		fmt.Printf("Usage: ./sort (flags) (path_to_file)")
 		return
 	}
-	// Fnal path variable
 	var filePath string
-	// Name of the file is the first argument
-	file := os.Args[1]
+	var firstIndex int
+	// Name of the file is right after the flags
+	for i := 1; i < len(params); i++ {
+		if !strings.HasPrefix(params[i], "-") {
+			firstIndex = i
+			break
+		}
+	}
+	if firstIndex == 0 {
+		fmt.Printf("Usage: ./sort (flags) (path_to_file)")
+		return
+	}
+	file := os.Args[firstIndex]
+
+	var column int
+	reverse := flag.Bool("r", false, "sort in reverse order")
+	unique := flag.Bool("u", false, "do not write repeating strings")
+	num := flag.Bool("n", false, "sort by numerical value")
+	flag.IntVar(&column, "k", -1, "column to sort. columns are divided with space by default")
+	flag.Parse()
+
 	// Getting current directory
 	path, err := os.Getwd()
 	if err != nil {
@@ -132,28 +182,63 @@ func SortFile() {
 	}
 
 	// Declaring & parsing flags
-	var column int
-	reverse := flag.Bool("r", false, "sort in reverse order")
-	unique := flag.Bool("u", false, "do not write repeating strings")
-	flag.IntVar(&column, "k", 0, "column to sort. columns are divided with space by default")
-	flag.Parse()
 
 	//filePath = path
 	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
-	if *unique {
-		lines = removeDuplicates(lines)
-	}
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 
-	// If reverse order flag is true - sort in reverse order
-	if *reverse {
-		sort.Sort(sort.Reverse(sort.StringSlice(lines)))
+	if column != -1 {
+		lines = selectColumn(lines, column)
+	}
+
+	if *unique {
+		lines = removeDuplicates(lines)
+	}
+
+	// Fucked up but working
+	// Numerical check
+	if *num {
+		if !*reverse {
+			sort.Slice(lines, func(i, j int) bool {
+				a, err := strconv.ParseInt(lines[i], 10, 0)
+				if err != nil {
+
+					return false
+				}
+				b, err := strconv.ParseInt(lines[j], 10, 0)
+				if err != nil {
+
+					return false
+				}
+				return a < b
+			})
+		} else {
+			sort.Slice(lines, func(i, j int) bool {
+				a, err := strconv.ParseInt(lines[i], 10, 0)
+				if err != nil {
+
+					return false
+				}
+				b, err := strconv.ParseInt(lines[j], 10, 0)
+				if err != nil {
+
+					return false
+				}
+				return a > b
+			})
+		}
+		// Non-numerical check
 	} else {
-		sort.Strings(lines)
+		// If reverse order flag is true - sort in reverse order
+		if *reverse {
+			sort.Sort(sort.Reverse(sort.StringSlice(lines)))
+		} else {
+			sort.Strings(lines)
+		}
 	}
 
 	fmt.Println(lines)

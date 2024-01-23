@@ -1,12 +1,8 @@
 -50
 2
 50
+51
+59
+1004
 9075
-Battleship
-Fuck
-Snow
-Submarine
-Xanax
-Yellow
-ball
-car
+10020

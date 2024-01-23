@@ -178,7 +178,7 @@ func Grep() {
 	// Fnal path variable
 	var filePath string
 	var firstIndex, secondIndex int
-	// Name of the file is the first argument
+	// Name of the file is right after the flags
 	for i := 1; i < len(params); i++ {
 		if !strings.HasPrefix(params[i], "-") {
 			firstIndex = i
