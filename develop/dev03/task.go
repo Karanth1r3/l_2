@@ -23,14 +23,6 @@ func main() {
 	SortFile()
 }
 
-func dev03(filePath string) {
-	data, err := os.ReadFile("/home/vboxuser/go/src/github.com/Karanth1r3/l_2/develop/dev03/data.txt")
-	//	file, err := os.Open(filePath)
-	checkError(err)
-
-	fmt.Println(data)
-}
-
 func removeDuplicates[T comparable](arr []T) []T {
 	if len(arr) < 2 {
 		return arr
@@ -105,11 +97,6 @@ func writeLines(filePath string, lines []string) (err error) {
 	return nil
 }
 
-func divideByColumns(s string) (result []string) {
-	result = strings.Split(s, " ")
-	return result
-}
-
 func makeComparedSlice(lines []string, index int) []string {
 	comparedLines := make([]string, len(lines))
 	for idx, line := range lines {
@@ -119,8 +106,24 @@ func makeComparedSlice(lines []string, index int) []string {
 	return comparedLines
 }
 
+func hasColumn(lines []string, index int) bool {
+	isOk := true
+	for _, line := range lines {
+		if index > len(strings.Split(line, " ")) {
+			isOk = false
+		}
+	}
+	if !isOk {
+		fmt.Println("index is too large for this input data. it will be ignored")
+	}
+	return isOk
+}
+
 func sortNumLess(lines []string, index int) []string {
 
+	if !hasColumn(lines, index) {
+		index = -1
+	}
 	if index == -1 {
 		sort.SliceStable(lines, func(i, j int) bool {
 			a, err := strconv.ParseInt(lines[i], 10, 0)
@@ -155,7 +158,9 @@ func sortNumLess(lines []string, index int) []string {
 }
 
 func sortNumMore(lines []string, index int) []string {
-
+	if !hasColumn(lines, index) {
+		index = -1
+	}
 	if index == -1 {
 		sort.SliceStable(lines, func(i, j int) bool {
 			a, err := strconv.ParseInt(lines[i], 10, 0)
@@ -190,6 +195,9 @@ func sortNumMore(lines []string, index int) []string {
 }
 
 func sortMore(lines []string, index int) []string {
+	if !hasColumn(lines, index) {
+		index = -1
+	}
 	if index != -1 {
 		sort.SliceStable(lines, func(i, j int) bool {
 			return strings.Compare(strings.Split(lines[i], " ")[index], strings.Split(lines[j], " ")[index]) > 0
@@ -204,6 +212,9 @@ func sortMore(lines []string, index int) []string {
 }
 
 func sortLess(lines []string, index int) []string {
+	if !hasColumn(lines, index) {
+		index = -1
+	}
 	if index != -1 {
 		sort.SliceStable(lines, func(i, j int) bool {
 			return strings.Compare(strings.Split(lines[i], " ")[index], strings.Split(lines[j], " ")[index]) <= 0
@@ -271,7 +282,7 @@ func SortFile() {
 		return
 	}
 	file := os.Args[firstIndex]
-
+	// Declaring & parsing flags
 	var column int
 	reverse := flag.Bool("r", false, "sort in reverse order")
 	unique := flag.Bool("u", false, "do not write repeating strings")
@@ -295,24 +306,11 @@ func SortFile() {
 		filePath = filepath.Join(dir, file)
 	}
 
-	// Declaring & parsing flags
-
-	//filePath = path
-	// If u flag is true - only unique strings are going to be read
 	lines, err := readLines(filePath)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
-
-	linesCopy := make([]string, len(lines))
-	copy(linesCopy, lines)
-	/*
-		if column != -1 {
-			copy(linesCopy, lines)
-			lines = selectColumn(lines, column)
-		}
-	*/
 
 	// Fucked up but working
 	// Numerical check
@@ -331,7 +329,7 @@ func SortFile() {
 			sortMore(lines, column)
 		}
 	}
-
+	// If u flag is true - only unique strings are going to be exported
 	if *unique {
 		lines = removeDuplicates(lines)
 	}
