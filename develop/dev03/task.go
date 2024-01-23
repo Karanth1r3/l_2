@@ -110,23 +110,132 @@ func divideByColumns(s string) (result []string) {
 	return result
 }
 
-/*
-	func sortNum(lines []string) []string {
-		sort.Slice(data, func(i, j int) bool {
-			val, err := strconv.ParseInt(data[i], 10, 0)
-			if err != nil {
+func makeComparedSlice(lines []string, index int) []string {
+	comparedLines := make([]string, len(lines))
+	for idx, line := range lines {
+		parts := strings.Split(line, " ")
+		comparedLines[idx] = parts[index]
+	}
+	return comparedLines
+}
 
+func sortNumLess(lines []string, index int) []string {
+
+	if index == -1 {
+		sort.SliceStable(lines, func(i, j int) bool {
+			a, err := strconv.ParseInt(lines[i], 10, 0)
+			if err != nil {
 				return false
 			}
-			b, err := strconv.ParseInt(data[j], 10, 0)
+			b, err := strconv.ParseInt(lines[j], 10, 0)
 			if err != nil {
-
 				return false
 			}
+			fmt.Println(a, b)
 			return a < b
 		})
+		fmt.Println(lines)
+	} else {
+		sort.SliceStable(lines, func(i, j int) bool {
+			a, err := strconv.ParseInt(strings.Split(lines[i], " ")[index], 10, 0)
+			if err != nil {
+				return false
+			}
+			b, err := strconv.ParseInt(strings.Split(lines[j], " ")[index], 10, 0)
+			if err != nil {
+				return false
+			}
+			fmt.Println(a, b)
+			return a < b
+		})
+		fmt.Println(lines)
 	}
-*/
+
+	return lines
+}
+
+func sortNumMore(lines []string, index int) []string {
+
+	if index == -1 {
+		sort.SliceStable(lines, func(i, j int) bool {
+			a, err := strconv.ParseInt(lines[i], 10, 0)
+			if err != nil {
+				return false
+			}
+			b, err := strconv.ParseInt(lines[j], 10, 0)
+			if err != nil {
+				return false
+			}
+			fmt.Println(a, b)
+			return a > b
+		})
+		fmt.Println(lines)
+	} else {
+		sort.SliceStable(lines, func(i, j int) bool {
+			a, err := strconv.ParseInt(strings.Split(lines[i], " ")[index], 10, 0)
+			if err != nil {
+				return false
+			}
+			b, err := strconv.ParseInt(strings.Split(lines[j], " ")[index], 10, 0)
+			if err != nil {
+				return false
+			}
+			fmt.Println(a, b)
+			return a > b
+		})
+		fmt.Println(lines)
+	}
+
+	return lines
+}
+
+func sortMore(lines []string, index int) []string {
+	if index != -1 {
+		sort.SliceStable(lines, func(i, j int) bool {
+			return strings.Compare(strings.Split(lines[i], " ")[index], strings.Split(lines[j], " ")[index]) > 0
+		})
+	} else {
+		sort.SliceStable(lines, func(i, j int) bool {
+			return strings.Compare(lines[i], lines[j]) > 0
+		})
+	}
+
+	return lines
+}
+
+func sortLess(lines []string, index int) []string {
+	if index != -1 {
+		sort.SliceStable(lines, func(i, j int) bool {
+			return strings.Compare(strings.Split(lines[i], " ")[index], strings.Split(lines[j], " ")[index]) <= 0
+		})
+	} else {
+		sort.SliceStable(lines, func(i, j int) bool {
+			return strings.Compare(lines[i], lines[j]) <= 0
+		})
+	}
+
+	return lines
+}
+
+func removeD(lines []string, index int) []string {
+	comparedLines := make([]string, 0)
+	if index == -1 {
+		comparedLines = lines
+	} else {
+		comparedLines = makeComparedSlice(lines, index)
+	}
+
+	allKeys := make(map[string]bool)
+	list := []string{}
+	for idx, elem := range comparedLines {
+		if _, ok := allKeys[elem]; !ok {
+			allKeys[elem] = true
+			list = append(list, lines[idx])
+		}
+	}
+	return list
+}
+
 func selectColumn(lines []string, index int) []string {
 
 	for lidx, line := range lines {
@@ -192,76 +301,57 @@ func SortFile() {
 	}
 
 	linesCopy := make([]string, len(lines))
-	if column != -1 {
-		copy(linesCopy, lines)
-		lines = selectColumn(lines, column)
+	copy(linesCopy, lines)
+	/*
+		if column != -1 {
+			copy(linesCopy, lines)
+			lines = selectColumn(lines, column)
+		}
+	*/
+
+	// Fucked up but working
+	// Numerical check
+	if *num {
+		if !*reverse {
+			sortNumLess(lines, column)
+		} else {
+			sortNumMore(lines, column)
+		}
+		// Non-numerical check
+	} else {
+		// If reverse order flag is true - sort in reverse order
+		if !*reverse {
+			sortLess(lines, column)
+		} else {
+			sortMore(lines, column)
+		}
 	}
 
 	if *unique {
 		lines = removeDuplicates(lines)
 	}
 
-	// Fucked up but working
-	// Numerical check
-	if *num {
-		if !*reverse {
-			sort.Slice(lines, func(i, j int) bool {
-				a, err := strconv.ParseInt(lines[i], 10, 0)
-				if err != nil {
-
-					return false
+	/*
+		// Restoring original lines if was supposed to sort specific column
+		if column != -1 {
+			for lidx, line := range linesCopy {
+				parts := strings.Split(line, " ")
+				line = ""
+				for i, part := range parts {
+					//		contains := false
+					if i == column {
+						part = lines[lidx]
+					}
+					line += part
+					if i < len(parts)-1 {
+						line += " "
+					}
 				}
-				b, err := strconv.ParseInt(lines[j], 10, 0)
-				if err != nil {
-
-					return false
-				}
-				return a < b
-			})
-		} else {
-			sort.Slice(lines, func(i, j int) bool {
-				a, err := strconv.ParseInt(lines[i], 10, 0)
-				if err != nil {
-
-					return false
-				}
-				b, err := strconv.ParseInt(lines[j], 10, 0)
-				if err != nil {
-
-					return false
-				}
-				return a > b
-			})
-		}
-		// Non-numerical check
-	} else {
-		// If reverse order flag is true - sort in reverse order
-		if *reverse {
-			sort.Sort(sort.Reverse(sort.StringSlice(lines)))
-		} else {
-			sort.Strings(lines)
-		}
-	}
-
-	// Restoring original lines if was supposed to sort specific column
-	if column != -1 {
-		for lidx, line := range linesCopy {
-			parts := strings.Split(line, " ")
-			line = ""
-			for i, part := range parts {
-				//		contains := false
-				if i == column {
-					part = lines[lidx]
-				}
-				line += part
-				if i < len(parts)-1 {
-					line += " "
-				}
+				linesCopy[lidx] = line
 			}
-			linesCopy[lidx] = line
+			lines = linesCopy
 		}
-		lines = linesCopy
-	}
+	*/
 	for _, elem := range lines {
 		fmt.Println(elem)
 	}
