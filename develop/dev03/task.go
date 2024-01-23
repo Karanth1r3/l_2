@@ -191,7 +191,9 @@ func SortFile() {
 		os.Exit(1)
 	}
 
+	linesCopy := make([]string, len(lines))
 	if column != -1 {
+		copy(linesCopy, lines)
 		lines = selectColumn(lines, column)
 	}
 
@@ -241,7 +243,28 @@ func SortFile() {
 		}
 	}
 
-	fmt.Println(lines)
+	// Restoring original lines if was supposed to sort specific column
+	if column != -1 {
+		for lidx, line := range linesCopy {
+			parts := strings.Split(line, " ")
+			line = ""
+			for i, part := range parts {
+				//		contains := false
+				if i == column {
+					part = lines[lidx]
+				}
+				line += part
+				if i < len(parts)-1 {
+					line += " "
+				}
+			}
+			linesCopy[lidx] = line
+		}
+		lines = linesCopy
+	}
+	for _, elem := range lines {
+		fmt.Println(elem)
+	}
 	err = writeLines(filePath, lines)
 	if err != nil {
 		fmt.Println(err)
