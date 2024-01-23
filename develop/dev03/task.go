@@ -278,7 +278,12 @@ func SortFile() {
 	num := flag.Bool("n", false, "sort by numerical value")
 	flag.IntVar(&column, "k", -1, "column to sort. columns are divided with space by default")
 	flag.Parse()
-
+	// in original - indexes start with 1 i guess; this block handles that
+	if column < 1 {
+		column = -1
+	} else {
+		column--
+	}
 	// Getting current directory
 	path, err := os.Getwd()
 	if err != nil {
