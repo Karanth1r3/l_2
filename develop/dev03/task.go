@@ -134,10 +134,8 @@ func sortNumLess(lines []string, index int) []string {
 			if err != nil {
 				return false
 			}
-			fmt.Println(a, b)
 			return a < b
 		})
-		fmt.Println(lines)
 	} else {
 		sort.SliceStable(lines, func(i, j int) bool {
 			a, err := strconv.ParseInt(strings.Split(lines[i], " ")[index], 10, 0)
@@ -148,10 +146,8 @@ func sortNumLess(lines []string, index int) []string {
 			if err != nil {
 				return false
 			}
-			fmt.Println(a, b)
 			return a < b
 		})
-		fmt.Println(lines)
 	}
 
 	return lines
@@ -174,7 +170,6 @@ func sortNumMore(lines []string, index int) []string {
 			fmt.Println(a, b)
 			return a > b
 		})
-		fmt.Println(lines)
 	} else {
 		sort.SliceStable(lines, func(i, j int) bool {
 			a, err := strconv.ParseInt(strings.Split(lines[i], " ")[index], 10, 0)
@@ -188,7 +183,6 @@ func sortNumMore(lines []string, index int) []string {
 			fmt.Println(a, b)
 			return a > b
 		})
-		fmt.Println(lines)
 	}
 
 	return lines
