@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>tr — Википедия</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],"wgRequestId":"65f78aec-2cf4-4f0f-ace1-76b7c62a1408","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Tr","wgTitle":"Tr","wgCurRevisionId":126020660,"wgRevisionId":126020660,"wgArticleId":819588,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Страницы, использующие устаревший тег source","ПРО:ИТ:Статьи по алфавиту","ПРО:ИТ:Последняя правка: в позапрошлом году",
+"Программное обеспечение по алфавиту","Инструменты Unix для обработки текста"],"wgPageViewLanguage":"ru","wgPageContentLanguage":"ru","wgPageContentModel":"wikitext","wgRelevantPageName":"Tr","wgRelevantArticleId":819588,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgNoticeProject":"wikipedia","wgFlaggedRevsParams":{"tags":{"accuracy":{"levels":1}}},"wgStableRevisionId":126020660,"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsFlags":6,"wgVisualEditor":{"pageLanguageCode":"ru","pageLanguageDir":"ltr","pageVariantFallbacks":"ru"},"wgMFDisplayWikibaseDescriptions":{"search":true,"watchlist":true,"tagline":false,"nearby":true},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":3000,"wgULSCurrentAutonym":"русский","wgCentralAuthMobileDomain":false,"wgEditSubmitButtonLabelPublish":true,"wgULSPosition":"interlanguage",
+"wgULSisCompactLinksEnabled":true,"wgULSisLanguageSelectorEmpty":false,"wgWikibaseItemId":"Q709372","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"],"GEHomepageSuggestedEditsEnableTopics":true,"wgGETopicsMatchModeEnabled":false,"wgGEStructuredTaskRejectionReasonTextInputEnabled":false,"wgGELevelingUpEnabledForUser":false};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.flaggedRevs.icons":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready","oojs-ui-core.icons":"ready","ext.pygments":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","codex-search-styles":"ready","ext.uls.interlanguage":"ready","wikibase.client.init":"ready","ext.wikimediaBadges":
+"ready"};RLPAGEMODULES=["ext.scribunto.logs","mediawiki.toggleAllCollapsibles","site","mediawiki.page.ready","skins.vector.legacy.js","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.flaggedRevs.advanced","ext.gadget.collapserefs","ext.gadget.directLinkToCommons","ext.gadget.referenceTooltips","ext.gadget.logo","ext.gadget.edittop","ext.gadget.blpEditNotice","ext.gadget.wikibugs","ext.gadget.sidebarRelated","ext.gadget.navboxNavigation","ext.urlShortener.toolbar","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.echo.centralauth","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.checkUser.clientHints","ext.quicksurveys.init","ext.growthExperiments.SuggestedEditSession","oojs-ui.styles.icons-media","oojs-ui-core.icons"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=ru&amp;modules=codex-search-styles%7Cext.flaggedRevs.basic%2Cicons%7Cext.pygments%2CwikimediaBadges%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles.legacy%7Cwikibase.client.init&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/load.php?lang=ru&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=ru&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<noscript><link rel="stylesheet" href="/w/load.php?lang=ru&amp;modules=noscript&amp;only=styles&amp;skin=vector"></noscript>
+<meta name="generator" content="MediaWiki 1.42.0-wmf.14">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e3/Tr_Unix.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="646">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e3/Tr_Unix.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="431">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="345">
+<meta name="viewport" content="width=1000">
+<meta property="og:title" content="tr — Википедия">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//ru.m.wikipedia.org/wiki/Tr">
+<link rel="alternate" type="application/x-wiki" title="Править" href="/w/index.php?title=Tr&amp;action=edit">
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png">
+<link rel="icon" href="/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Википедия (ru)">
+<link rel="EditURI" type="application/rsd+xml" href="//ru.wikipedia.org/w/api.php?action=rsd">
+<link rel="canonical" href="https://ru.wikipedia.org/wiki/Tr">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ru">
+<link rel="alternate" type="application/atom+xml" title="Википедия — Atom-лента" href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8&amp;feed=atom">
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Tr rootpage-Tr skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"><!-- CentralNotice --></div>
+	<div class="mw-indicators">
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading">tr</h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">Материал из Википедии — свободной энциклопедии</div>
+		<div id="contentSub"><div id="mw-content-subtitle"></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Перейти к навигации</a>
+		<a class="mw-jump-link" href="#searchInput">Перейти к поиску</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="ru" dir="ltr"><div class="hatnote navigation-not-searchable noprint dabhide">У этого термина существуют и другие значения, см. <a href="/wiki/Tr_(%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)" class="mw-disambig" title="Tr (значения)">Tr (значения)</a>.</div>
+<p class="mw-empty-elt">
+</p>
+<table class="infobox infobox-0b7ab4b7f1cc5ef5" style="" data-name="Программа"><tbody><tr><th colspan="2" scope="colgroup" class="infobox-above" style="">Tr</th></tr><tr><td colspan="2" class="infobox-image" style=""> <span data-wikidata-claim-id="Q709372$371605AB-1CC7-43AC-BA40-4D3C4B46C895" class="wikidata-claim" data-wikidata-property-id="P18"><span class="wikidata-snak wikidata-main-snak"><span typeof="mw:File/Frameless"><a href="/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:Tr_Unix.png" class="mw-file-description"><img alt="Скриншот программы Tr" src="//upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Tr_Unix.png/274px-Tr_Unix.png" decoding="async" width="274" height="147" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Tr_Unix.png/411px-Tr_Unix.png 1.5x, //upload.wikimedia.org/wikipedia/commons/e/e3/Tr_Unix.png 2x" data-file-width="522" data-file-height="281" /></a></span></span></span> </td></tr>
+<tr>
+<th scope="row" class="plainlist">Тип</th>
+<td class="plainlist">
+<span data-wikidata-claim-id="Q709372$fd299f07-434f-5a0a-477d-2f6641bcd975" class="wikidata-claim" data-wikidata-property-id="P31&#91;!Q341&#93;&#91;!Q7397&#93;&#91;!Q166142&#93;"><span class="wikidata-snak wikidata-main-snak"><span class="plainlinks"><a class="external text" href="https://ru.wikipedia.org/w/index.php?title=%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0+UNIX&amp;action=edit&amp;editintro=T:Нет_статьи/editintro&amp;preload=T:Нет_статьи/preload&amp;preloadparams%5B%5D=Q18343316&amp;preloadparams%5B%5D=%D1%83%D1%82%D0%B8%D0%BB%D0%B8%D1%82%D0%B0+UNIX&amp;preloadparams%5B%5D=Универсальная+карточка"><span style="color: #ba0000; text-decoration: inherit; -moz-text-decoration-color: #ba0000; text-decoration-color: #ba0000;">утилита UNIX</span></a></span><sup><a href="https://www.wikidata.org/wiki/Q18343316" class="extiw" title="d:Q18343316">[d]</a></sup></span></span></td>
+</tr>
+<tr>
+<th scope="row" class="plainlist"><a href="/wiki/%D0%A0%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B9" title="Репозиторий">Репозиторий</a></th>
+<td class="plainlist">
+<span data-wikidata-claim-id="Q709372$cdfe29c2-40dd-b80b-f0a4-57543294ad0a" class="wikidata-claim" data-wikidata-property-id="P1324"><span class="wikidata-snak wikidata-main-snak"><a rel="nofollow" class="external text" href="http://openbsd.su/src/usr.bin/tr/">openbsd.su/src/usr.bin/t…</a></span></span></td>
+</tr>
+</tbody></table>
+<p><b>tr</b> — <a href="/wiki/UNIX" class="mw-redirect" title="UNIX">UNIX</a>-утилита для преобразования символов. Утилита tr копирует стандартный входной поток в стандартный выходной, подставляя или удаляя некоторые символы. Заданные опции и операнды строка1 и строка2 управляют происходящим преобразованием по ходу копирования отдельных символов и последовательностей символов.
+</p>
+<h2><span id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5"></span><span class="mw-headline" id="Использование">Использование</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tr&amp;veaction=edit&amp;section=1" title="Редактировать раздел «Использование»" class="mw-editsection-visualeditor"><span>править</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tr&amp;action=edit&amp;section=1" title="Редактировать код раздела «Использование»"><span>править код</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><tt>tr [-c | -C] [-s] строка1 строка2</tt></li>
+<li><tt>tr -s [-c | -C] строка1</tt></li>
+<li><tt>tr -d [-c | -C] строка1</tt></li>
+<li><tt>tr -ds [-c | -C] строка1 строка2</tt></li></ul>
+<p>Поддерживаются следующие опции:
+</p>
+<dl><dt>-c, -C</dt>
+<dd>Дополняет набор символов, задаваемый строкой 1.</dd>
+<dt>-d</dt>
+<dd>Удаляет все вхождения символов, указанных в строке 1.</dd>
+<dt>-s</dt>
+<dd>Заменяет повторяющиеся вхождения символа одним символом.</dd></dl>
+<h2><span id=".D0.9F.D1.80.D0.B8.D0.BC.D0.B5.D1.80.D1.8B"></span><span class="mw-headline" id="Примеры">Примеры</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tr&amp;veaction=edit&amp;section=2" title="Редактировать раздел «Примеры»" class="mw-editsection-visualeditor"><span>править</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tr&amp;action=edit&amp;section=2" title="Редактировать код раздела «Примеры»"><span>править код</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>В этом примере создается список всех слов в файле file1, который помещается в файл file2 по одному слову в строке:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span>tr<span class="w"> </span>-cs<span class="w"> </span><span class="s2">&quot;[:alpha:]&quot;</span><span class="w"> </span><span class="s2">&quot;[\n*]&quot;</span><span class="w"> </span>&lt;<span class="w"> </span>file1<span class="w"> </span>&gt;<span class="w"> </span>file2
+</pre></div>
+<p>Следующая команда переводит все символы нижнего регистра в файле file1 в верхний регистр и записывает результат в стандартный выходной поток:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span>tr<span class="w"> </span><span class="s2">&quot;[:lower:]&quot;</span><span class="w"> </span><span class="s2">&quot;[:upper:]&quot;</span><span class="w"> </span>&lt;<span class="w"> </span>file1
+</pre></div>
+<p>В этом примере используется класс эквивалентности для выявления акцентированных вариантов базового символа e в файле file1, из которых удаляются диакритические знаки, и результат записывается в файл file2:
+</p>
+<div class="mw-highlight mw-highlight-lang-bash mw-content-ltr" dir="ltr"><pre><span></span>tr<span class="w"> </span><span class="s2">&quot;[=e=]&quot;</span><span class="w"> </span>e<span class="w"> </span>&lt;<span class="w"> </span>file1<span class="w"> </span>&gt;<span class="w"> </span>file2
+</pre></div>
+<h2><span id=".D0.A1.D1.81.D1.8B.D0.BB.D0.BA.D0.B8"></span><span class="mw-headline" id="Ссылки">Ссылки</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Tr&amp;veaction=edit&amp;section=3" title="Редактировать раздел «Ссылки»" class="mw-editsection-visualeditor"><span>править</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Tr&amp;action=edit&amp;section=3" title="Редактировать код раздела «Ссылки»"><span>править код</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><code><a rel="nofollow" class="external text" href="http://linux.die.net/man/1/tr">tr(1)</a></code>&#160;—&#160;страница справки <a href="/wiki/Man" title="Man">man</a> по пользовательским командам <a href="/wiki/GNU/Linux" class="mw-redirect" title="GNU/Linux">GNU/Linux</a> &#160;<small class="ref-info" style="cursor:help;" title="на английском языке">(англ.)</small> (см. <a href="/wiki/GNU_Coreutils" title="GNU Coreutils">GNU Coreutils</a>)</li>
+<li><code><a rel="nofollow" class="external text" href="http://www.openbsd.org/cgi-bin/man.cgi?query=tr.1">tr(1)</a></code>&#160;—&#160;страница справки <a href="/wiki/Man" title="Man">man</a> по пользовательским командам <a href="/wiki/OpenBSD" title="OpenBSD">OpenBSD</a> &#160;<small class="ref-info" style="cursor:help;" title="на английском языке">(англ.)</small></li>
+<li><code><a rel="nofollow" class="external text" href="http://www.freebsd.org/cgi/man.cgi?query=tr&amp;sektion=1">tr(1)</a></code>&#160;—&#160;страница справки <a href="/wiki/Man" title="Man">man</a> по пользовательским командам <a href="/wiki/FreeBSD" title="FreeBSD">FreeBSD</a> &#160;<small class="ref-info" style="cursor:help;" title="на английском языке">(англ.)</small></li></ul>
+<div role="navigation" class="navbox" aria-labelledby="Команды_Unix" data-name="Команды Unix"><table class="nowraplinks collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th scope="colgroup" class="navbox-title" colspan="2"><span class="navbox-gear" style="float:left;text-align:left;width:5em;margin-right:0.5em"><span class="noprint" typeof="mw:File"><a href="/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_Unix" title="Перейти к шаблону «Команды Unix»"><img alt="Перейти к шаблону «Команды Unix»" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/14px-Wikipedia_interwiki_section_gear_icon.svg.png" decoding="async" width="14" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/21px-Wikipedia_interwiki_section_gear_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/28px-Wikipedia_interwiki_section_gear_icon.svg.png 2x" data-file-width="14" data-file-height="14" /></a></span>&#160;</span><div id="Команды_Unix" style="font-size:114%;margin:0 5em">Команды Unix</div></th></tr><tr><td class="navbox-list navbox-odd" style="width:100%;padding:0px"><div style="padding:0em 0.25em"></div><table class="nowraplinks collapsible uncollapsed navbox-subgroup" style="border-spacing:0"><tbody><tr><th scope="colgroup" class="navbox-title" colspan="2"><span class="navbox-gear" style="float:left;text-align:left;width:5em;margin-right:0.5em"><span class="noprint" typeof="mw:File"><a href="/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:POSIX.1-2008" title="Перейти к шаблону «POSIX.1-2008»"><img alt="Перейти к шаблону «POSIX.1-2008»" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/14px-Wikipedia_interwiki_section_gear_icon.svg.png" decoding="async" width="14" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/21px-Wikipedia_interwiki_section_gear_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/28px-Wikipedia_interwiki_section_gear_icon.svg.png 2x" data-file-width="14" data-file-height="14" /></a></span>&#160;</span><div id="Утилиты_POSIX.1-2008" style="font-size:114%;margin:0 5em">Утилиты <a href="/wiki/POSIX" title="POSIX">POSIX.1-2008</a></div></th></tr><tr><td class="navbox-list navbox-odd hlist" style="width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/w/index.php?title=Admin&amp;action=edit&amp;redlink=1" class="new" title="Admin (страница отсутствует)">admin</a></li>
+<li><a href="/w/index.php?title=Alias_(bash)&amp;action=edit&amp;redlink=1" class="new" title="Alias (bash) (страница отсутствует)">alias</a></li>
+<li><a href="/w/index.php?title=Ar_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Ar (Unix) (страница отсутствует)">ar</a></li>
+<li><a href="/w/index.php?title=Asa&amp;action=edit&amp;redlink=1" class="new" title="Asa (страница отсутствует)">asa</a></li>
+<li><a href="/wiki/At" title="At">at</a></li>
+<li><a href="/wiki/Awk" class="mw-redirect" title="Awk">awk</a></li>
+<li><a href="/w/index.php?title=Basename&amp;action=edit&amp;redlink=1" class="new" title="Basename (страница отсутствует)">basename</a></li>
+<li><a href="/w/index.php?title=Batch&amp;action=edit&amp;redlink=1" class="new" title="Batch (страница отсутствует)">batch</a></li>
+<li><a href="/wiki/Bc" title="Bc">bc</a></li>
+<li><a href="/wiki/Bg" class="mw-redirect" title="Bg">bg</a></li>
+<li><a href="/w/index.php?title=C99_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)&amp;action=edit&amp;redlink=1" class="new" title="C99 (команда) (страница отсутствует)">c99</a></li>
+<li><a href="/w/index.php?title=Cal&amp;action=edit&amp;redlink=1" class="new" title="Cal (страница отсутствует)">cal</a></li>
+<li><a href="/wiki/Cat" title="Cat">cat</a></li>
+<li><a href="/wiki/Cd_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)" title="Cd (команда)">cd</a></li>
+<li><a href="/w/index.php?title=Cflow&amp;action=edit&amp;redlink=1" class="new" title="Cflow (страница отсутствует)">cflow</a></li>
+<li><a href="/wiki/Chgrp" title="Chgrp">chgrp</a></li>
+<li><a href="/wiki/Chmod" title="Chmod">chmod</a></li>
+<li><a href="/wiki/Chown" title="Chown">chown</a></li>
+<li><a href="/wiki/Cksum" title="Cksum">cksum</a></li>
+<li><a href="/wiki/Cmp" title="Cmp">cmp</a></li>
+<li><a href="/wiki/Comm" title="Comm">comm</a></li>
+<li><a href="/w/index.php?title=Command_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Command (Unix) (страница отсутствует)">command</a></li>
+<li><a href="/w/index.php?title=Compress_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Compress (Unix) (страница отсутствует)">compress</a></li>
+<li><a href="/wiki/Cp" title="Cp">cp</a></li>
+<li><a href="/wiki/Crontab" class="mw-redirect" title="Crontab">crontab</a></li>
+<li><a href="/wiki/Csplit" title="Csplit">csplit</a></li>
+<li><a href="/wiki/Ctags" title="Ctags">ctags</a></li>
+<li><a href="/wiki/Cut" title="Cut">cut</a></li>
+<li><a href="/w/index.php?title=Cxref&amp;action=edit&amp;redlink=1" class="new" title="Cxref (страница отсутствует)">cxref</a></li>
+<li><a href="/wiki/Date" title="Date">date</a></li>
+<li><a href="/wiki/Dd" title="Dd">dd</a></li>
+<li><a href="/w/index.php?title=Delta_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Delta (Unix) (страница отсутствует)">delta</a></li>
+<li><a href="/wiki/Df" title="Df">df</a></li>
+<li><a href="/wiki/Diff" title="Diff">diff</a></li>
+<li><a href="/wiki/Dirname" title="Dirname">dirname</a></li>
+<li><a href="/wiki/Du" title="Du">du</a></li>
+<li><a href="/wiki/Echo_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)" title="Echo (команда)">echo</a></li>
+<li><a href="/wiki/Ed" title="Ed">ed</a></li>
+<li><a href="/wiki/Env" title="Env">env</a></li>
+<li><a href="/wiki/Ex_(Unix)" title="Ex (Unix)">ex</a></li>
+<li><a href="/wiki/Expand" title="Expand">expand</a></li>
+<li><a href="/wiki/Expr" title="Expr">expr</a></li>
+<li><a href="/wiki/False" title="False">false</a></li>
+<li><a href="/wiki/Fc_(Unix)" title="Fc (Unix)">fc</a></li>
+<li><a href="/wiki/Fg" title="Fg">fg</a></li>
+<li><a href="/wiki/File_(Unix)" title="File (Unix)">file</a></li>
+<li><a href="/wiki/Find" title="Find">find</a></li>
+<li><a href="/wiki/Fold" title="Fold">fold</a></li>
+<li><a href="/w/index.php?title=Fort77&amp;action=edit&amp;redlink=1" class="new" title="Fort77 (страница отсутствует)">fort77</a></li>
+<li><a href="/w/index.php?title=Fuser&amp;action=edit&amp;redlink=1" class="new" title="Fuser (страница отсутствует)">fuser</a></li>
+<li><a href="/w/index.php?title=Gencat&amp;action=edit&amp;redlink=1" class="new" title="Gencat (страница отсутствует)">gencat</a></li>
+<li><a href="/w/index.php?title=Get&amp;action=edit&amp;redlink=1" class="new" title="Get (страница отсутствует)">get</a></li>
+<li><a href="/w/index.php?title=Getconf&amp;action=edit&amp;redlink=1" class="new" title="Getconf (страница отсутствует)">getconf</a></li>
+<li><a href="/w/index.php?title=Getopts&amp;action=edit&amp;redlink=1" class="new" title="Getopts (страница отсутствует)">getopts</a></li>
+<li><a href="/wiki/Grep" title="Grep">grep</a></li>
+<li><a href="/wiki/Hash" class="mw-redirect" title="Hash">hash</a></li>
+<li><a href="/wiki/Head_(Unix)" title="Head (Unix)">head</a></li>
+<li><a href="/wiki/Iconv" title="Iconv">iconv</a></li>
+<li><a href="/wiki/Id" title="Id">id</a></li>
+<li><a href="/w/index.php?title=Ipcrm&amp;action=edit&amp;redlink=1" class="new" title="Ipcrm (страница отсутствует)">ipcrm</a></li>
+<li><a href="/w/index.php?title=Ipcs&amp;action=edit&amp;redlink=1" class="new" title="Ipcs (страница отсутствует)">ipcs</a></li>
+<li><a href="/w/index.php?title=Jobs&amp;action=edit&amp;redlink=1" class="new" title="Jobs (страница отсутствует)">jobs</a></li>
+<li><a href="/wiki/Join_(Unix)" title="Join (Unix)">join</a></li>
+<li><a href="/wiki/Kill" title="Kill">kill</a></li>
+<li><a href="/wiki/Lex" title="Lex">lex</a></li>
+<li><a href="/w/index.php?title=Link_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Link (Unix) (страница отсутствует)">link</a></li>
+<li><a href="/wiki/Ln_(Unix)" title="Ln (Unix)">ln</a></li>
+<li><a href="/wiki/Locale" title="Locale">locale</a></li>
+<li><a href="/w/index.php?title=Localedef&amp;action=edit&amp;redlink=1" class="new" title="Localedef (страница отсутствует)">localedef</a></li>
+<li><a href="/wiki/Logger" title="Logger">logger</a></li>
+<li><a href="/wiki/Logname" title="Logname">logname</a></li>
+<li><a href="/wiki/Lp" title="Lp">lp</a></li>
+<li><a href="/wiki/Ls" title="Ls">ls</a></li>
+<li><a href="/wiki/%D0%9C%D0%B0%D0%BA%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%BE%D1%80_m4" class="mw-redirect" title="Макропроцессор m4">m4</a></li>
+<li><a href="/w/index.php?title=Mailx&amp;action=edit&amp;redlink=1" class="new" title="Mailx (страница отсутствует)">mailx</a></li>
+<li><a href="/wiki/Make" title="Make">make</a></li>
+<li><a href="/wiki/Man" title="Man">man</a></li>
+<li><a href="/wiki/Mesg" title="Mesg">mesg</a></li>
+<li><a href="/wiki/Mkdir" title="Mkdir">mkdir</a></li>
+<li><a href="/wiki/Mkfifo" class="mw-redirect" title="Mkfifo">mkfifo</a></li>
+<li><a href="/wiki/More" title="More">more</a></li>
+<li><a href="/wiki/Mv" title="Mv">mv</a></li>
+<li><a href="/w/index.php?title=Newgrp&amp;action=edit&amp;redlink=1" class="new" title="Newgrp (страница отсутствует)">newgrp</a></li>
+<li><a href="/wiki/Nice" title="Nice">nice</a></li>
+<li><a href="/wiki/Nl" title="Nl">nl</a></li>
+<li><a href="/wiki/Nm" title="Nm">nm</a></li>
+<li><a href="/wiki/Nohup" title="Nohup">nohup</a></li>
+<li><a href="/wiki/Od" title="Od">od</a></li>
+<li><a href="/wiki/Paste" title="Paste">paste</a></li>
+<li><a href="/wiki/Patch_(Unix)" title="Patch (Unix)">patch</a></li>
+<li><a href="/w/index.php?title=Pathchk&amp;action=edit&amp;redlink=1" class="new" title="Pathchk (страница отсутствует)">pathchk</a></li>
+<li><a href="/wiki/Pax_(Unix)" title="Pax (Unix)">pax</a></li>
+<li><a href="/wiki/Pr_(Unix)" class="mw-redirect" title="Pr (Unix)">pr</a></li>
+<li><a href="/wiki/Printf" title="Printf">printf</a></li>
+<li><a href="/w/index.php?title=Prs&amp;action=edit&amp;redlink=1" class="new" title="Prs (страница отсутствует)">prs</a></li>
+<li><a href="/wiki/Ps" title="Ps">ps</a></li>
+<li><a href="/wiki/Pwd" title="Pwd">pwd</a></li>
+<li><a href="/w/index.php?title=Qalter&amp;action=edit&amp;redlink=1" class="new" title="Qalter (страница отсутствует)">qalter</a></li>
+<li><a href="/w/index.php?title=Qdel&amp;action=edit&amp;redlink=1" class="new" title="Qdel (страница отсутствует)">qdel</a></li>
+<li><a href="/w/index.php?title=Qhold&amp;action=edit&amp;redlink=1" class="new" title="Qhold (страница отсутствует)">qhold</a></li>
+<li><a href="/w/index.php?title=Qmove&amp;action=edit&amp;redlink=1" class="new" title="Qmove (страница отсутствует)">qmove</a></li>
+<li><a href="/w/index.php?title=Qmsg&amp;action=edit&amp;redlink=1" class="new" title="Qmsg (страница отсутствует)">qmsg</a></li>
+<li><a href="/w/index.php?title=Qrerun&amp;action=edit&amp;redlink=1" class="new" title="Qrerun (страница отсутствует)">qrerun</a></li>
+<li><a href="/w/index.php?title=Qrls&amp;action=edit&amp;redlink=1" class="new" title="Qrls (страница отсутствует)">qrls</a></li>
+<li><a href="/w/index.php?title=Qselect&amp;action=edit&amp;redlink=1" class="new" title="Qselect (страница отсутствует)">qselect</a></li>
+<li><a href="/w/index.php?title=Qsig&amp;action=edit&amp;redlink=1" class="new" title="Qsig (страница отсутствует)">qsig</a></li>
+<li><a href="/w/index.php?title=Qstat&amp;action=edit&amp;redlink=1" class="new" title="Qstat (страница отсутствует)">qstat</a></li>
+<li><a href="/w/index.php?title=Qsub&amp;action=edit&amp;redlink=1" class="new" title="Qsub (страница отсутствует)">qsub</a></li>
+<li><a href="/w/index.php?title=Read_(UNIX)&amp;action=edit&amp;redlink=1" class="new" title="Read (UNIX) (страница отсутствует)">read</a></li>
+<li><a href="/wiki/Renice" title="Renice">renice</a></li>
+<li><a href="/wiki/Rm" title="Rm">rm</a></li>
+<li><a href="/w/index.php?title=Rmdel&amp;action=edit&amp;redlink=1" class="new" title="Rmdel (страница отсутствует)">rmdel</a></li>
+<li><a href="/wiki/Rmdir" title="Rmdir">rmdir</a></li>
+<li><a href="/w/index.php?title=Sact&amp;action=edit&amp;redlink=1" class="new" title="Sact (страница отсутствует)">sact</a></li>
+<li><a href="/wiki/Source_Code_Control_System" title="Source Code Control System">sccs</a></li>
+<li><a href="/wiki/Sed" title="Sed">sed</a></li>
+<li><a href="/wiki/Bash" title="Bash">sh</a></li>
+<li><a href="/wiki/Sleep" title="Sleep">sleep</a></li>
+<li><a href="/wiki/Sort" title="Sort">sort</a></li>
+<li><a href="/wiki/Split" title="Split">split</a></li>
+<li><a href="/wiki/Strings" title="Strings">strings</a></li>
+<li><a href="/wiki/Strip_(Unix)" title="Strip (Unix)">strip</a></li>
+<li><a href="/w/index.php?title=Stty&amp;action=edit&amp;redlink=1" class="new" title="Stty (страница отсутствует)">stty</a></li>
+<li><a href="/w/index.php?title=Tabs&amp;action=edit&amp;redlink=1" class="new" title="Tabs (страница отсутствует)">tabs</a></li>
+<li><a href="/wiki/Tail" title="Tail">tail</a></li>
+<li><a href="/w/index.php?title=Talk_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Talk (Unix) (страница отсутствует)">talk</a></li>
+<li><a href="/wiki/Tee" title="Tee">tee</a></li>
+<li><a href="/wiki/Test" title="Test">test</a></li>
+<li><a href="/wiki/Time_(Unix)" title="Time (Unix)">time</a></li>
+<li><a href="/wiki/Touch" title="Touch">touch</a></li>
+<li><a href="/w/index.php?title=Tput&amp;action=edit&amp;redlink=1" class="new" title="Tput (страница отсутствует)">tput</a></li>
+<li><a class="mw-selflink selflink">tr</a></li>
+<li><a href="/wiki/True" title="True">true</a></li>
+<li><a href="/w/index.php?title=Tsort&amp;action=edit&amp;redlink=1" class="new" title="Tsort (страница отсутствует)">tsort</a></li>
+<li><a href="/wiki/Tty_(Unix)" title="Tty (Unix)">tty</a></li>
+<li><a href="/wiki/Type" title="Type">type</a></li>
+<li><a href="/w/index.php?title=Ulimit&amp;action=edit&amp;redlink=1" class="new" title="Ulimit (страница отсутствует)">ulimit</a></li>
+<li><a href="/wiki/Umask" title="Umask">umask</a></li>
+<li><a href="/w/index.php?title=Unalias&amp;action=edit&amp;redlink=1" class="new" title="Unalias (страница отсутствует)">unalias</a></li>
+<li><a href="/wiki/Uname" title="Uname">uname</a></li>
+<li><a href="/w/index.php?title=Uncompress&amp;action=edit&amp;redlink=1" class="new" title="Uncompress (страница отсутствует)">uncompress</a></li>
+<li><a href="/wiki/Unexpand" title="Unexpand">unexpand</a></li>
+<li><a href="/w/index.php?title=Unget&amp;action=edit&amp;redlink=1" class="new" title="Unget (страница отсутствует)">unget</a></li>
+<li><a href="/wiki/Uniq" title="Uniq">uniq</a></li>
+<li><a href="/wiki/Unlink" title="Unlink">unlink</a></li>
+<li><a href="/wiki/Uucp" title="Uucp">uucp</a></li>
+<li><a href="/wiki/Uudecode" class="mw-redirect" title="Uudecode">uudecode</a></li>
+<li><a href="/wiki/Uuencode" class="mw-redirect" title="Uuencode">uuencode</a></li>
+<li><a href="/w/index.php?title=Uustat&amp;action=edit&amp;redlink=1" class="new" title="Uustat (страница отсутствует)">uustat</a></li>
+<li><a href="/w/index.php?title=Uux&amp;action=edit&amp;redlink=1" class="new" title="Uux (страница отсутствует)">uux</a></li>
+<li><a href="/w/index.php?title=Val&amp;action=edit&amp;redlink=1" class="new" title="Val (страница отсутствует)">val</a></li>
+<li><a href="/wiki/Vi" title="Vi">vi</a></li>
+<li><a href="/wiki/Wait_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)" title="Wait (команда)">wait</a></li>
+<li><a href="/wiki/Wc" title="Wc">wc</a></li>
+<li><a href="/w/index.php?title=What&amp;action=edit&amp;redlink=1" class="new" title="What (страница отсутствует)">what</a></li>
+<li><a href="/wiki/Who" title="Who">who</a></li>
+<li><a href="/wiki/Write" title="Write">write</a></li>
+<li><a href="/wiki/Xargs" title="Xargs">xargs</a></li>
+<li><a href="/wiki/Yacc" title="Yacc">yacc</a></li>
+<li><a href="/w/index.php?title=Zcat&amp;action=edit&amp;redlink=1" class="new" title="Zcat (страница отсутствует)">zcat</a></li></ul>
+</div></td></tr></tbody></table><div></div></td></tr><tr><td class="navbox-list navbox-even" style="width:100%;padding:0px"><div style="padding:0em 0.25em"><div role="navigation" class="navbox" aria-labelledby="GNU_Coreutils" data-name="GNU Coreutils"><table class="nowraplinks collapsible uncollapsed navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th scope="colgroup" class="navbox-title" colspan="2"><span class="navbox-gear" style="float:left;text-align:left;width:5em;margin-right:0.5em"><span class="noprint" typeof="mw:File"><a href="/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD:GNU_Coreutils" title="Перейти к шаблону «GNU Coreutils»"><img alt="Перейти к шаблону «GNU Coreutils»" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/14px-Wikipedia_interwiki_section_gear_icon.svg.png" decoding="async" width="14" height="14" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/21px-Wikipedia_interwiki_section_gear_icon.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wikipedia_interwiki_section_gear_icon.svg/28px-Wikipedia_interwiki_section_gear_icon.svg.png 2x" data-file-width="14" data-file-height="14" /></a></span>&#160;</span><div id="GNU_Coreutils" style="font-size:114%;margin:0 5em"><a href="/wiki/GNU_Coreutils" title="GNU Coreutils">GNU Coreutils</a></div></th></tr><tr><th scope="row" class="navbox-group" style="width:1px">Файловые утилиты</th><td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/wiki/Chgrp" title="Chgrp">chgrp</a></li>
+<li><a href="/wiki/Chown" title="Chown">chown</a></li>
+<li><a href="/wiki/Chmod" title="Chmod">chmod</a></li>
+<li><a href="/wiki/Cp" title="Cp">cp</a></li>
+<li><a href="/wiki/Dd" title="Dd">dd</a></li>
+<li><a href="/wiki/Df" title="Df">df</a></li>
+<li><a href="/wiki/Ls" title="Ls">dir</a></li>
+<li><a href="/w/index.php?title=Dircolors&amp;action=edit&amp;redlink=1" class="new" title="Dircolors (страница отсутствует)">dircolors</a></li>
+<li><a href="/wiki/Install" title="Install">install</a></li>
+<li><a href="/wiki/Ln_(Unix)" title="Ln (Unix)">ln</a></li>
+<li><a href="/wiki/Ls" title="Ls">ls</a></li>
+<li><a href="/wiki/Mkdir" title="Mkdir">mkdir</a></li>
+<li><a href="/wiki/%D0%98%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB#Именованные_каналы_в_Unix" title="Именованный канал">mkfifo</a></li>
+<li><span data-interwiki-lang="en" data-interwiki-article="Device file#Node creation"><a href="/wiki/%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%84%D0%B0%D0%B9%D0%BB_%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0" title="Специальный файл устройства">mknod</a></span><span class="noprint" style="font-style:normal; font-weight:normal;"><sup><a href="https://en.wikipedia.org/wiki/Device_file#Node_creation" class="extiw" title="en:Device file"><span title="Device file#Node creation — версия статьи «Специальный файл устройства» на английском языке">[en]</span></a></sup></span></li>
+<li><a href="/wiki/Mv" title="Mv">mv</a></li>
+<li><a href="/wiki/Rm" title="Rm">rm</a></li>
+<li><a href="/wiki/Rmdir" title="Rmdir">rmdir</a></li>
+<li><a href="/wiki/Shred" title="Shred">shred</a></li>
+<li><a href="/wiki/Sync" title="Sync">sync</a></li>
+<li><a href="/wiki/Touch" title="Touch">touch</a></li>
+<li><a href="/wiki/Vdir" title="Vdir">vdir</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1px">Текстовые утилиты</th><td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/wiki/Cat" title="Cat">cat</a></li>
+<li><a href="/wiki/Cksum" title="Cksum">cksum</a></li>
+<li><a href="/wiki/Comm" title="Comm">comm</a></li>
+<li><a href="/wiki/Csplit" title="Csplit">csplit</a></li>
+<li><a href="/wiki/Cut" title="Cut">cut</a></li>
+<li><a href="/wiki/Expand" title="Expand">expand</a></li>
+<li><a href="/wiki/Fmt" title="Fmt">fmt</a></li>
+<li><a href="/wiki/Fold" title="Fold">fold</a></li>
+<li><a href="/wiki/Head_(Unix)" title="Head (Unix)">head</a></li>
+<li><a href="/wiki/Join_(Unix)" title="Join (Unix)">join</a></li>
+<li><a href="/wiki/Md5sum" title="Md5sum">md5sum</a></li>
+<li><a href="/wiki/Nl" title="Nl">nl</a></li>
+<li><a href="/wiki/Od" title="Od">od</a></li>
+<li><a href="/wiki/Paste" title="Paste">paste</a></li>
+<li><span data-interwiki-lang="en" data-interwiki-article="ptx (Unix)"><a href="/w/index.php?title=Ptx_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Ptx (Unix) (страница отсутствует)">ptx</a></span><span class="noprint" style="font-style:normal; font-weight:normal;"><sup><a href="https://en.wikipedia.org/wiki/ptx_(Unix)" class="extiw" title="en:ptx (Unix)"><span title="ptx (Unix) — версия статьи «Ptx (Unix)» на английском языке">[en]</span></a></sup></span></li>
+<li><a href="/wiki/Pr_(unix)" title="Pr (unix)">pr</a></li>
+<li><a href="/wiki/Sha1sum" title="Sha1sum">sha1sum</a></li>
+<li><a href="/wiki/Sort" title="Sort">sort</a></li>
+<li><a href="/wiki/Split" title="Split">split</a></li>
+<li><a href="/wiki/Sum_(Unix)" title="Sum (Unix)">sum</a></li>
+<li><a href="/w/index.php?title=Tac&amp;action=edit&amp;redlink=1" class="new" title="Tac (страница отсутствует)">tac</a></li>
+<li><a href="/wiki/Tail" title="Tail">tail</a></li>
+<li><a class="mw-selflink selflink">tr</a></li>
+<li><span data-interwiki-lang="en" data-interwiki-article="tsort"><a href="/w/index.php?title=Tsort&amp;action=edit&amp;redlink=1" class="new" title="Tsort (страница отсутствует)">tsort</a></span><span class="noprint" style="font-style:normal; font-weight:normal;"><sup><a href="https://en.wikipedia.org/wiki/tsort" class="extiw" title="en:tsort"><span title="tsort — версия статьи «Tsort» на английском языке">[en]</span></a></sup></span></li>
+<li><a href="/wiki/Unexpand" title="Unexpand">unexpand</a></li>
+<li><a href="/wiki/Uniq" title="Uniq">uniq</a></li>
+<li><a href="/wiki/Wc" title="Wc">wc</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1px">Shell-утилиты</th><td class="navbox-list navbox-odd hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/w/index.php?title=Basename&amp;action=edit&amp;redlink=1" class="new" title="Basename (страница отсутствует)">basename</a></li>
+<li><a href="/wiki/Chroot" title="Chroot">chroot</a></li>
+<li><a href="/wiki/Date" title="Date">date</a></li>
+<li><a href="/wiki/Dirname" title="Dirname">dirname</a></li>
+<li><a href="/wiki/Du" title="Du">du</a></li>
+<li><a href="/wiki/Echo_(%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0)" title="Echo (команда)">echo</a></li>
+<li><a href="/wiki/Env" title="Env">env</a></li>
+<li><a href="/wiki/Expr" title="Expr">expr</a></li>
+<li><span data-interwiki-lang="en" data-interwiki-article="factor (Unix)"><a href="/w/index.php?title=Factor_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Factor (Unix) (страница отсутствует)">factor</a></span><span class="noprint" style="font-style:normal; font-weight:normal;"><sup><a href="https://en.wikipedia.org/wiki/factor_(Unix)" class="extiw" title="en:factor (Unix)"><span title="factor (Unix) — версия статьи «Factor (Unix)» на английском языке">[en]</span></a></sup></span></li>
+<li><a href="/wiki/False" title="False">false</a></li>
+<li><span data-interwiki-lang="en" data-interwiki-article="Group (computing)"><a href="/w/index.php?title=Group_(computing)&amp;action=edit&amp;redlink=1" class="new" title="Group (computing) (страница отсутствует)">groups</a></span><span class="noprint" style="font-style:normal; font-weight:normal;"><sup><a href="https://en.wikipedia.org/wiki/Group_(computing)" class="extiw" title="en:Group (computing)"><span title="Group (computing) — версия статьи «Group (computing)» на английском языке">[en]</span></a></sup></span></li>
+<li><a href="/w/index.php?title=Hostid&amp;action=edit&amp;redlink=1" class="new" title="Hostid (страница отсутствует)">hostid</a></li>
+<li><a href="/wiki/Id" title="Id">id</a></li>
+<li><a href="/w/index.php?title=Link_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Link (Unix) (страница отсутствует)">link</a></li>
+<li><a href="/wiki/Logname" title="Logname">logname</a></li>
+<li><a href="/wiki/Nice" title="Nice">nice</a></li>
+<li><a href="/wiki/Nohup" title="Nohup">nohup</a></li>
+<li><a href="/w/index.php?title=Pathchk&amp;action=edit&amp;redlink=1" class="new" title="Pathchk (страница отсутствует)">pathchk</a></li>
+<li><a href="/w/index.php?title=Pinky_(Unix)&amp;action=edit&amp;redlink=1" class="new" title="Pinky (Unix) (страница отсутствует)">pinky</a></li>
+<li><span data-interwiki-lang="en" data-interwiki-article="Environment variable#Unix"><a href="/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D1%80%D0%B5%D0%B4%D1%8B" title="Переменная среды">printenv</a></span><span class="noprint" style="font-style:normal; font-weight:normal;"><sup><a href="https://en.wikipedia.org/wiki/Environment_variable#Unix" class="extiw" title="en:Environment variable"><span title="Environment variable#Unix — версия статьи «Переменная среды» на английском языке">[en]</span></a></sup></span></li>
+<li><a href="/wiki/Printf" title="Printf">printf</a></li>
+<li><a href="/wiki/Pwd" title="Pwd">pwd</a></li>
+<li><a href="/w/index.php?title=Readlink&amp;action=edit&amp;redlink=1" class="new" title="Readlink (страница отсутствует)">readlink</a></li>
+<li><a href="/wiki/Seq" title="Seq">seq</a></li>
+<li><a href="/wiki/Sleep" title="Sleep">sleep</a></li>
+<li><a href="/w/index.php?title=Stat&amp;action=edit&amp;redlink=1" class="new" title="Stat (страница отсутствует)">stat</a></li>
+<li><a href="/w/index.php?title=Stty&amp;action=edit&amp;redlink=1" class="new" title="Stty (страница отсутствует)">stty</a></li>
+<li><a href="/wiki/Tee" title="Tee">tee</a></li>
+<li><a href="/wiki/Test" title="Test">test</a></li>
+<li><a href="/wiki/True" title="True">true</a></li>
+<li><a href="/wiki/Tty_(Unix)" title="Tty (Unix)">tty</a></li>
+<li><a href="/wiki/Uname" title="Uname">uname</a></li>
+<li><a href="/wiki/Unlink" title="Unlink">unlink</a></li>
+<li><a href="/wiki/Users" title="Users">users</a></li>
+<li><a href="/wiki/Who" title="Who">who</a></li>
+<li><a href="/wiki/Whoami" title="Whoami">whoami</a></li>
+<li><a href="/wiki/Yes_(Unix)" title="Yes (Unix)">yes</a></li></ul>
+</div></td></tr><tr><th scope="row" class="navbox-group" style="width:1px">другие утилиты</th><td class="navbox-list navbox-even hlist" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px"><div style="padding:0em 0.25em">
+<ul><li><a href="/wiki/Size" title="Size">size</a></li>
+<li><a href="/wiki/Start-stop-daemon" title="Start-stop-daemon">Start-stop-daemon</a></li>
+<li><a href="/wiki/Surfraw" title="Surfraw">Surfraw</a></li></ul>
+</div></td></tr></tbody></table></div></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw2390
+Cached time: 20240101060930
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.325 seconds
+Real time usage: 0.511 seconds
+Preprocessor visited node count: 2023/1000000
+Post‐expand include size: 70540/2097152 bytes
+Template argument size: 3444/2097152 bytes
+Highest expansion depth: 17/100
+Expensive parser function count: 23/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1139/5000000 bytes
+Lua time usage: 0.212/10.000 seconds
+Lua memory usage: 8561036/52428800 bytes
+Number of Wikibase entities loaded: 16/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  453.406      1 -total
+ 62.96%  285.476      1 Шаблон:Карточка_программы
+ 56.93%  258.122      1 Шаблон:Карточка
+ 32.65%  148.042     19 Шаблон:Wikidata
+ 18.15%   82.292      3 Шаблон:Навигационная_таблица
+ 11.72%   53.153      5 Шаблон:Wikidata_plural_switch
+ 10.82%   49.047      1 Шаблон:Команды_Unix
+  5.98%   27.126      1 Шаблон:Другие_значения
+  5.67%   25.721      1 Шаблон:Другое_значение
+  5.45%   24.703      1 Шаблон:GNU_Coreutils
+-->
+
+<!-- Saved in parser cache with key ruwiki:pcache:idhash:819588-0!canonical and timestamp 20240101060929 and revision id 126020660. Rendering was triggered because: page-view
+ -->
+</div><!--esi <esi:include src="/esitest-fa8a495983347898/content" /> --><noscript><img src="https://login.wikimedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
+<div class="printfooter" data-nosnippet="">Источник — <a dir="ltr" href="https://ru.wikipedia.org/w/index.php?title=Tr&amp;oldid=126020660">https://ru.wikipedia.org/w/index.php?title=Tr&amp;oldid=126020660</a></div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B8" title="Служебная:Категории">Категории</a>: <ul><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D1%83" title="Категория:Программное обеспечение по алфавиту">Программное обеспечение по алфавиту</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B_Unix_%D0%B4%D0%BB%D1%8F_%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0" title="Категория:Инструменты Unix для обработки текста">Инструменты Unix для обработки текста</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Скрытые категории: <ul><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B,_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8E%D1%89%D0%B8%D0%B5_%D1%83%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B2%D1%88%D0%B8%D0%B9_%D1%82%D0%B5%D0%B3_source" title="Категория:Страницы, использующие устаревший тег source">Страницы, использующие устаревший тег source</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D0%A0%D0%9E:%D0%98%D0%A2:%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D0%B8_%D0%BF%D0%BE_%D0%B0%D0%BB%D1%84%D0%B0%D0%B2%D0%B8%D1%82%D1%83" title="Категория:ПРО:ИТ:Статьи по алфавиту">ПРО:ИТ:Статьи по алфавиту</a></li><li><a href="/wiki/%D0%9A%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D1%8F:%D0%9F%D0%A0%D0%9E:%D0%98%D0%A2:%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:_%D0%B2_%D0%BF%D0%BE%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%88%D0%BB%D0%BE%D0%BC_%D0%B3%D0%BE%D0%B4%D1%83" title="Категория:ПРО:ИТ:Последняя правка: в позапрошлом году">ПРО:ИТ:Последняя правка: в позапрошлом году</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Навигация</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Персональные инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-anonuserpage" class="mw-list-item"><span title="Страница участника для моего IP">Вы не представились системе</span></li><li id="pt-anontalk" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D1%91_%D0%BE%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5" title="Страница обсуждений для моего IP [n]" accesskey="n"><span>Обсуждение</span></a></li><li id="pt-anoncontribs" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9C%D0%BE%D0%B9_%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4" title="Список правок, сделанных с этого IP-адреса [y]" accesskey="y"><span>Вклад</span></a></li><li id="pt-createaccount" class="mw-list-item"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C_%D1%83%D1%87%D1%91%D1%82%D0%BD%D1%83%D1%8E_%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C&amp;returnto=Tr" title="Мы предлагаем вам создать учётную запись и войти в систему, хотя это и не обязательно."><span>Создать учётную запись</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%92%D1%85%D0%BE%D0%B4&amp;returnto=Tr" title="Здесь можно зарегистрироваться в системе, но это необязательно. [o]" accesskey="o"><span>Войти</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label" role="navigation"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Пространства имён</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/wiki/Tr" title="Просмотреть контентную страницу [c]" accesskey="c"><span>Статья</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/wiki/%D0%9E%D0%B1%D1%81%D1%83%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5:Tr" rel="discussion" title="Обсуждение основной страницы [t]" accesskey="t"><span>Обсуждение</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label" role="navigation"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">русский</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label" role="navigation"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Просмотры</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/wiki/Tr"><span>Читать</span></a></li><li id="ca-ve-edit" class="mw-list-item"><a href="/w/index.php?title=Tr&amp;veaction=edit" title="Редактировать данную страницу [v]" accesskey="v"><span>Править</span></a></li><li id="ca-edit" class="collapsible mw-list-item"><a href="/w/index.php?title=Tr&amp;action=edit" title="Править исходный текст этой страницы [e]" accesskey="e"><span>Править код</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/index.php?title=Tr&amp;action=history" title="Журнал изменений страницы [h]" accesskey="h"><span>История</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label" role="navigation"  title="Больше возможностей" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Ещё</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Поиск</h3>
+	<form action="/w/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Искать в Википедии" aria-label="Искать в Википедии" autocapitalize="sentences" title="Искать в Википедии [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Служебная:Поиск">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Найти страницы, содержащие указанный текст" value="Найти">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Перейти к странице, имеющей в точности такое название" value="Перейти">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0"
+			title="Перейти на заглавную страницу"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label" role="navigation"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Навигация</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage-description" class="mw-list-item"><a href="/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Перейти на заглавную страницу [z]" accesskey="z"><span>Заглавная страница</span></a></li><li id="n-content" class="mw-list-item"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5"><span>Содержание</span></a></li><li id="n-featured" class="mw-list-item"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%98%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8" title="Статьи, считающиеся лучшими статьями проекта"><span>Избранные статьи</span></a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BB%D1%83%D1%87%D0%B0%D0%B9%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" title="Посмотреть случайно выбранную страницу [x]" accesskey="x"><span>Случайная статья</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="/wiki/%D0%9F%D0%BE%D1%80%D1%82%D0%B0%D0%BB:%D0%A2%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5_%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" title="Статьи о текущих событиях в мире"><span>Текущие события</span></a></li><li id="n-sitesupport" class="mw-list-item"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ru.wikipedia.org&amp;uselang=ru" title="Поддержите нас"><span>Пожертвовать</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-participation" class="mw-portlet mw-portlet-participation vector-menu-portal portal vector-menu" aria-labelledby="p-participation-label" role="navigation"  >
+	<h3
+		id="p-participation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Участие</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-bug_in_article" class="mw-list-item"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F_%D0%BE%D0%B1_%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B0%D1%85" title="Сообщить об ошибке в этой статье"><span>Сообщить об ошибке</span></a></li><li id="n-introduction" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0:%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"><span>Как править статьи</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE" title="О проекте, о том, чем здесь можно заниматься, а также — где что находится"><span>Сообщество</span></a></li><li id="n-forum" class="mw-list-item"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A4%D0%BE%D1%80%D1%83%D0%BC" title="Форум участников Википедии"><span>Форум</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D0%B5%D0%B6%D0%B8%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" title="Список последних изменений [r]" accesskey="r"><span>Свежие правки</span></a></li><li id="n-newpages" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%9D%D0%BE%D0%B2%D1%8B%D0%B5_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список недавно созданных страниц"><span>Новые страницы</span></a></li><li id="n-help" class="mw-list-item"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%A1%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B0" title="Место расположения Справки"><span>Справка</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label" role="navigation"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Инструменты</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8_%D1%81%D1%8E%D0%B4%D0%B0/Tr" title="Список всех страниц, ссылающихся на данную [j]" accesskey="j"><span>Ссылки сюда</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%B2%D1%8F%D0%B7%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8/Tr" rel="nofollow" title="Последние изменения в страницах, на которые ссылается эта страница [k]" accesskey="k"><span>Связанные правки</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/wiki/%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A1%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B" title="Список служебных страниц [q]" accesskey="q"><span>Служебные страницы</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Tr&amp;oldid=126020660" title="Постоянная ссылка на эту версию страницы"><span>Постоянная ссылка</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Tr&amp;action=info" title="Подробнее об этой странице"><span>Сведения о странице</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:%D0%A6%D0%B8%D1%82%D0%B0%D1%82%D0%B0&amp;page=Tr&amp;id=126020660&amp;wpFormIdentifier=titleform" title="Информация о том, как цитировать эту страницу"><span>Цитировать страницу</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:UrlShortener&amp;url=https%3A%2F%2Fru.wikipedia.org%2Fwiki%2FTr"><span>Получить короткий URL</span></a></li><li id="t-wikibase" class="mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q709372" title="Ссылка на связанный элемент репозитория данных [g]" accesskey="g"><span>Элемент Викиданных</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-coll-print_export" class="mw-portlet mw-portlet-coll-print_export vector-menu-portal portal vector-menu" aria-labelledby="p-coll-print_export-label" role="navigation"  >
+	<h3
+		id="p-coll-print_export-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Печать/экспорт</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="coll-download-as-rl" class="mw-list-item"><a href="/w/index.php?title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F:DownloadAsPdf&amp;page=Tr&amp;action=show-download-screen" title="Скачать эту страницу как файл PDF"><span>Скачать как PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="/w/index.php?title=Tr&amp;printable=yes" title="Версия этой страницы для печати [p]" accesskey="p"><span>Версия для печати</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label" role="navigation"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">На других языках</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-ca mw-list-item"><a href="https://ca.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — каталанский" lang="ca" hreflang="ca" class="interlanguage-link-target"><span>Català</span></a></li><li class="interlanguage-link interwiki-cs mw-list-item"><a href="https://cs.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — чешский" lang="cs" hreflang="cs" class="interlanguage-link-target"><span>Čeština</span></a></li><li class="interlanguage-link interwiki-de mw-list-item"><a href="https://de.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — немецкий" lang="de" hreflang="de" class="interlanguage-link-target"><span>Deutsch</span></a></li><li class="interlanguage-link interwiki-en mw-list-item"><a href="https://en.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — английский" lang="en" hreflang="en" class="interlanguage-link-target"><span>English</span></a></li><li class="interlanguage-link interwiki-es mw-list-item"><a href="https://es.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — испанский" lang="es" hreflang="es" class="interlanguage-link-target"><span>Español</span></a></li><li class="interlanguage-link interwiki-fa mw-list-item"><a href="https://fa.wikipedia.org/wiki/Tr" title="Tr — персидский" lang="fa" hreflang="fa" class="interlanguage-link-target"><span>فارسی</span></a></li><li class="interlanguage-link interwiki-fi mw-list-item"><a href="https://fi.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — финский" lang="fi" hreflang="fi" class="interlanguage-link-target"><span>Suomi</span></a></li><li class="interlanguage-link interwiki-fr mw-list-item"><a href="https://fr.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — французский" lang="fr" hreflang="fr" class="interlanguage-link-target"><span>Français</span></a></li><li class="interlanguage-link interwiki-he mw-list-item"><a href="https://he.wikipedia.org/wiki/Tr_(%D7%A4%D7%A7%D7%95%D7%93%D7%94)" title="Tr (פקודה) — иврит" lang="he" hreflang="he" class="interlanguage-link-target"><span>עברית</span></a></li><li class="interlanguage-link interwiki-hr mw-list-item"><a href="https://hr.wikipedia.org/wiki/Tr" title="Tr — хорватский" lang="hr" hreflang="hr" class="interlanguage-link-target"><span>Hrvatski</span></a></li><li class="interlanguage-link interwiki-hu mw-list-item"><a href="https://hu.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — венгерский" lang="hu" hreflang="hu" class="interlanguage-link-target"><span>Magyar</span></a></li><li class="interlanguage-link interwiki-it mw-list-item"><a href="https://it.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — итальянский" lang="it" hreflang="it" class="interlanguage-link-target"><span>Italiano</span></a></li><li class="interlanguage-link interwiki-ja mw-list-item"><a href="https://ja.wikipedia.org/wiki/Tr_(UNIX)" title="Tr (UNIX) — японский" lang="ja" hreflang="ja" class="interlanguage-link-target"><span>日本語</span></a></li><li class="interlanguage-link interwiki-ko mw-list-item"><a href="https://ko.wikipedia.org/wiki/Tr_(%EC%9C%A0%EB%8B%89%EC%8A%A4)" title="Tr (유닉스) — корейский" lang="ko" hreflang="ko" class="interlanguage-link-target"><span>한국어</span></a></li><li class="interlanguage-link interwiki-pl mw-list-item"><a href="https://pl.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — польский" lang="pl" hreflang="pl" class="interlanguage-link-target"><span>Polski</span></a></li><li class="interlanguage-link interwiki-pt mw-list-item"><a href="https://pt.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — португальский" lang="pt" hreflang="pt" class="interlanguage-link-target"><span>Português</span></a></li><li class="interlanguage-link interwiki-sv mw-list-item"><a href="https://sv.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — шведский" lang="sv" hreflang="sv" class="interlanguage-link-target"><span>Svenska</span></a></li><li class="interlanguage-link interwiki-uk mw-list-item"><a href="https://uk.wikipedia.org/wiki/Tr" title="Tr — украинский" lang="uk" hreflang="uk" class="interlanguage-link-target"><span>Українська</span></a></li><li class="interlanguage-link interwiki-zh mw-list-item"><a href="https://zh.wikipedia.org/wiki/Tr_(Unix)" title="Tr (Unix) — китайский" lang="zh" hreflang="zh" class="interlanguage-link-target"><span>中文</span></a></li>
+		</ul>
+		<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q709372#sitelinks-wikipedia" title="Править ссылки на другие языки" class="wbc-editpage">Править ссылки</a></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> Эта страница в последний раз была отредактирована 12 октября 2022 в 14:47.</li>
+	<li id="footer-info-copyright">Текст доступен по <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.ru">лицензии Creative Commons «С указанием авторства — С сохранением условий» (CC BY-SA)</a><a rel="license" href="//creativecommons.org/licenses/by-sa/4.0/" style="display:none;"></a>; в отдельных случаях могут действовать дополнительные условия.
+<span class="noprint">Подробнее см. <a href="//foundation.wikimedia.org/wiki/Terms_of_Use/ru">Условия использования</a>.</span><br>
+Wikipedia® — зарегистрированный товарный знак некоммерческой организации <a href="//wikimediafoundation.org/ru/">Фонд Викимедиа (Wikimedia Foundation, Inc.)</a></li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy/ru">Политика конфиденциальности</a></li>
+	<li id="footer-places-about"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5">Описание Википедии</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:%D0%9E%D1%82%D0%BA%D0%B0%D0%B7_%D0%BE%D1%82_%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8">Отказ от ответственности</a></li>
+	<li id="footer-places-contact"><a href="//ru.wikipedia.org/wiki/Википедия:Контакты">Свяжитесь с нами</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct">Кодекс поведения</a></li>
+	<li id="footer-places-developers"><a href="https://developer.wikimedia.org">Разработчики</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/ru.wikipedia.org">Статистика</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement">Заявление о куки</a></li>
+	<li id="footer-places-mobileview"><a href="//ru.m.wikipedia.org/w/index.php?title=Tr&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Мобильная версия</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation" loading="lazy" /></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/footer/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgHostname":"mw-web.eqiad.main-b6d74fb85-wpfgk","wgBackendResponseTime":140,"wgPageParseReport":{"limitreport":{"cputime":"0.325","walltime":"0.511","ppvisitednodes":{"value":2023,"limit":1000000},"postexpandincludesize":{"value":70540,"limit":2097152},"templateargumentsize":{"value":3444,"limit":2097152},"expansiondepth":{"value":17,"limit":100},"expensivefunctioncount":{"value":23,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":1139,"limit":5000000},"entityaccesscount":{"value":16,"limit":400},"timingprofile":["100.00%  453.406      1 -total"," 62.96%  285.476      1 Шаблон:Карточка_программы"," 56.93%  258.122      1 Шаблон:Карточка"," 32.65%  148.042     19 Шаблон:Wikidata"," 18.15%   82.292      3 Шаблон:Навигационная_таблица"," 11.72%   53.153      5 Шаблон:Wikidata_plural_switch"," 10.82%   49.047      1 Шаблон:Команды_Unix","  5.98%   27.126      1 Шаблон:Другие_значения","  5.67%   25.721      1 Шаблон:Другое_значение","  5.45%   24.703      1 Шаблон:GNU_Coreutils"]},"scribunto":{"limitreport-timeusage":{"value":"0.212","limit":"10.000"},"limitreport-memusage":{"value":8561036,"limit":52428800},"limitreport-logs":"Loaded datatype commonsMedia of P154 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P170 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P178 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P408 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P306 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P400 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P1072 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P1073 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P170 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P178 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P277 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P1414 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P408 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P306 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype time of P577 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P400 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype string of P348 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype url of P1324 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\nLoaded datatype wikibase-item of P275 from wikidata, consider passing datatype argument to formatProperty call or to Wikidata/config\n"},"cachereport":{"origin":"mw2390","timestamp":"20240101060930","ttl":2592000,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Tr","url":"https:\/\/ru.wikipedia.org\/wiki\/Tr","sameAs":"http:\/\/www.wikidata.org\/entity\/Q709372","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q709372","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"\u0424\u043e\u043d\u0434 \u0412\u0438\u043a\u0438\u043c\u0435\u0434\u0438\u0430","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2007-10-04T16:01:21Z","dateModified":"2022-10-12T14:47:55Z","image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/e\/e3\/Tr_Unix.png"}</script>
+</body>
+</html>
