@@ -1,9 +1,7 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"io"
 	"log"
 	"net"
 	"time"
@@ -22,6 +20,7 @@ type (
 // CTOR for telnet client.
 func NewTelnetClient(host, port string, timeout time.Duration) (*TelnetClient, error) {
 
+	// conn, err := net.Dial("tcp", fmt.Sprintf("%s:%s", host, port))
 	conn, err := net.Dial("tcp", fmt.Sprintf("%s:%s", host, port))
 	if err != nil {
 		return nil, err
@@ -64,15 +63,15 @@ func (tc *TelnetClient) Read() ([]byte, error) {
 
 	n, err := tc.conn.Read(buf)
 	if err != nil {
+		/*
+			if v, ok := err.(net.Error); ok && v.Timeout() {
+				return nil, fmt.Errorf("read timeout")
+			}
 
-		if v, ok := err.(net.Error); ok && v.Timeout() {
-			return nil, fmt.Errorf("read timeout")
-		}
-
-		if errors.Is(err, io.EOF) {
-			return nil, fmt.Errorf("connection is closed by server")
-		}
-
+			if errors.Is(err, io.EOF) {
+				return nil, fmt.Errorf("connection is closed by server")
+			}
+		*/
 		return nil, fmt.Errorf("conn read error: %v", err)
 	}
 
@@ -81,26 +80,32 @@ func (tc *TelnetClient) Read() ([]byte, error) {
 
 func main() {
 
-	tc, err := NewTelnetClient("google.com", "80", time.Second*5)
+	tc, err := NewTelnetClient("google.com", "telnets", time.Second*5)
+
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	err = tc.Write([]byte("\n"))
+
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	resp, err := tc.Read()
+
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	fmt.Println(string(resp))
 
 	err = tc.Write([]byte("qqck"))
+
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Println(string(resp))
+
 }

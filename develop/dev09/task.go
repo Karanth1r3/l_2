@@ -1,8 +1,9 @@
-package main
+package dev09
 
 import (
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"path"
@@ -29,15 +30,9 @@ func download(url, file string) error {
 	return nil
 }
 
-func Wget() error {
-	// Checking cmd args, if there are none - print advise
-	args := os.Args
-	if len(args) == 1 {
-		fmt.Println("Usage:/wget (url)")
-		return fmt.Errorf("not enough arguments")
-	}
+func Wget(url string) error {
+
 	// Reading url from cmd args & forming filename with it
-	url := args[1]
 	file := path.Base(url)
 	// If file is not present yet - try to download page though url
 	if _, err := os.Stat(file); os.IsNotExist(err) {
@@ -52,6 +47,21 @@ func Wget() error {
 	}
 }
 
+func ParseArgs() ([]string, error) {
+	// Checking cmd args, if there are none - print advise
+	args := os.Args
+	if len(args) == 1 {
+		fmt.Println("Usage:/wget (url)")
+		return nil, fmt.Errorf("not enough arguments")
+	}
+	return args, nil
+}
+
 func main() {
-	Wget()
+	args, err := ParseArgs()
+	if err != nil {
+		log.Fatal(err)
+	}
+	url := args[1]
+	Wget(url)
 }
