@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"path/filepath"
 )
 
 func download(url, file string) error {
@@ -51,7 +52,7 @@ func ParseArgs() ([]string, error) {
 	// Checking cmd args, if there are none - print advise
 	args := os.Args
 	if len(args) == 1 {
-		fmt.Println("Usage:/wget (url)")
+		fmt.Println("Usage: %s(url)", filepath.Base(os.Args[0]))
 		return nil, fmt.Errorf("not enough arguments")
 	}
 	return args, nil

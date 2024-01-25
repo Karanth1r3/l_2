@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"unicode"
@@ -46,6 +47,7 @@ func ExecuteCut(lines []string, indexes []int, delim *string, sepOnly bool) {
 		if !contains {
 			continue
 		}
+		// Form output string
 		for _, column := range result[i] {
 
 			output += fmt.Sprintf("%s", column)
@@ -77,7 +79,7 @@ func Cut() {
 
 	params := os.Args
 	if len(params) == 1 {
-		fmt.Printf("Usage: ./cut (flags) (string data)")
+		fmt.Printf("Usage: %s (flags) (string data)", filepath.Base(os.Args[0]))
 		return
 	}
 

@@ -272,7 +272,7 @@ func SortFile() {
 		}
 	}
 	if firstIndex == 0 {
-		fmt.Printf("Usage: ./sort (flags) (path_to_file)")
+		fmt.Printf("Usage: %s (flags) (path_to_file)", filepath.Base(os.Args[0]))
 		return
 	}
 	file := os.Args[firstIndex]
@@ -327,28 +327,6 @@ func SortFile() {
 	if *unique {
 		lines = removeDuplicates(lines)
 	}
-
-	/*
-		// Restoring original lines if was supposed to sort specific column
-		if column != -1 {
-			for lidx, line := range linesCopy {
-				parts := strings.Split(line, " ")
-				line = ""
-				for i, part := range parts {
-					//		contains := false
-					if i == column {
-						part = lines[lidx]
-					}
-					line += part
-					if i < len(parts)-1 {
-						line += " "
-					}
-				}
-				linesCopy[lidx] = line
-			}
-			lines = linesCopy
-		}
-	*/
 	for _, elem := range lines {
 		fmt.Println(elem)
 	}

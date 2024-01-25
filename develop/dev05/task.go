@@ -171,7 +171,7 @@ func Grep() {
 	// Checking if cmd arguments are present. If they aren't - Print usage advice
 	params := os.Args
 	if len(params) == 1 {
-		fmt.Printf("Usage: ./grep (flags) (string_pattern) (path_to_file)")
+		fmt.Printf("Usage: %s (flags) (string_pattern) (path_to_file)", filepath.Base(os.Args[0]))
 		return
 	}
 
