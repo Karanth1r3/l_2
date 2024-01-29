@@ -4,14 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"log"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
 	"syscall"
-	"time"
 )
 
 var currentDir string
@@ -24,11 +22,16 @@ func main() {
 	}
 	input := make(chan string)
 	done := make(chan struct{})
+	//var stopChan = make(chan os.Signal, 2)
+	//	signal.Notify(stopChan, os.Interrupt, syscall.SIGTERM, syscall.SIGINT, os.Kill)
+
 	wg := sync.WaitGroup{}
 	wg.Add(1)
+	//	<-stopChan // wait for SIGINT
 	go Read(&wg, input, done)
-	go Execute(input, done)
+	go CommandsLoop(input, done)
 	wg.Wait()
+
 }
 
 func CheckChdir(path string) {
@@ -40,12 +43,13 @@ func CheckChdir(path string) {
 	}
 }
 
-func echo(arg string) {
+func echo(arg string) string {
 	arg = strings.ReplaceAll(arg, "\"", "")
 	fmt.Println(arg)
+	return arg
 }
 
-func changeDirectory(arg string) {
+func changeDirectory(arg string) (newDir string, err error) {
 	switch arg {
 	// If arg is ',' - no action is required - it is supposed to set directory to current
 	case ".":
@@ -64,16 +68,17 @@ func changeDirectory(arg string) {
 	default:
 		newPath, err := formDirectory(arg)
 		if err != nil {
-			fmt.Println("No such file or directory")
-			return
+			return "", fmt.Errorf("could not form directory: %w", err)
 		}
 		CheckChdir(newPath)
 	}
 	c, err := os.Getwd()
 	if err != nil {
-		fmt.Println(err)
+		return "", fmt.Errorf("could not change directory: %w", err)
 	}
+
 	fmt.Println("Current directory set to: ", c)
+	return c, nil
 }
 
 func checkPath(path string) error {
@@ -121,27 +126,56 @@ func Read(wg *sync.WaitGroup, inputCh chan<- string, doneCh chan struct{}) {
 	}
 }
 
+// WORKS ONLY IF BUILD FOR FUCK SAKE........................................
 func killProcess(pid int) error {
 	process, err := os.FindProcess(pid)
+	/*
+		if err != nil {
+			fmt.Println(err)
+			return fmt.Errorf("PID %d returned %v \n", pid, err)
+		}
+	*/
+	err = process.Signal(syscall.Signal(0))
 	if err != nil {
+		fmt.Println(err)
 		return fmt.Errorf("PID %d returned %v \n", pid, err)
 	}
 
-	for i := 0; i < 10; i++ {
-		time.Sleep(1 * time.Second)
-		err = process.Signal(syscall.Signal(0))
-		if err != nil {
-			fmt.Printf("Process %d terminated gracefully", pid) // Is that so? Should check != vs ==
-			return nil
-		}
+	if err := process.Kill(); err != nil {
+		fmt.Println(err)
 	}
+	/*
 
-	log.Printf("Failed to terminate pid %d gracefully, sending SIGKILL \n", pid)
-	err = process.Signal(syscall.SIGKILL)
-	if err != nil {
-		//	log.Fatalf("pid %d returned %v", pid, err)
-		return fmt.Errorf("PID %d returned %v", pid, err)
-	}
+		err = process.Kill()
+		//	err = syscall.Kill(-pid, syscall.SIGKILL)
+		if err != nil {
+			fmt.Println(err, pid)
+			fmt.Println(process.Pid)
+			return err
+		}
+		process.Release()
+	*/
+	/*
+		for i := 0; i < 10; i++ {
+			time.Sleep(1 * time.Second)
+			fmt.Println(process == nil)
+			err = process.Signal(syscall.Signal(0))
+			fmt.Println(err)
+			if err == nil {
+				fmt.Printf("Process %d terminated gracefully", pid) // Is that so? Should check != vs ==
+				return nil
+			}
+		}
+
+		log.Printf("Failed to terminate pid %d gracefully, sending SIGKILL \n", pid)
+		err = process.Signal(syscall.SIGKILL)
+		if err != nil {
+			//	log.Fatalf("pid %d returned %v", pid, err)
+			return fmt.Errorf("PID %d returned %v", pid, err)
+		}
+		return nil
+	*/
+	fmt.Println("Killed", pid)
 	return nil
 }
 
@@ -189,11 +223,30 @@ type Process struct {
 	path string
 }
 
-func getProcessInfo() {
-	r, w := io.Pipe()
+func forkExec() (int, error) {
+	path, err := os.Executable()
+	if err != nil {
+		return 0, fmt.Errorf("could not get executable info: %w", err)
+	}
+	fmt.Println(path)
+
+	pid, err := syscall.ForkExec(path, os.Args, &syscall.ProcAttr{
+		Dir:   "/",
+		Env:   []string{},
+		Files: []uintptr{os.Stdin.Fd(), os.Stdout.Fd(), os.Stderr.Fd()},
+		Sys:   nil,
+	})
+	if err != nil {
+		return 0, fmt.Errorf("could not execute forkExec: %w", err)
+	}
+	return pid, nil
+}
+
+func getProcessInfo() error {
+
 	matches, err := filepath.Glob("/proc/*/exe") // Processes are stored here i guess
 	if err != nil {
-		fmt.Println(err)
+		return fmt.Errorf("could not get processes info: %w", err)
 	}
 	id := "-1"
 	// Iterating through active processes
@@ -206,13 +259,112 @@ func getProcessInfo() {
 			//fmt.Printf("%+v\n", target)
 		}
 	}
+	return nil
 }
 
+// Fuck
+func checkPipe(input string) (res []string) {
+	return strings.Split(input, "|")
+}
+
+func CommandsLoop(input chan string, done chan struct{}) {
+	r, w := io.Pipe()
+	//defer w.Close()
+	for {
+		select {
+		//Checking input channel
+		case command := <-input:
+			cmds := checkPipe(command)
+			for _, cmd := range cmds {
+				Execute(cmd, r, w)
+			}
+		case <-done:
+			return
+		}
+
+	}
+}
+
+func Execute(cmd string, r *io.PipeReader, w *io.PipeWriter) error {
+	/*
+		defer w.Close()
+		buf := make([]byte, 1024)
+		_, _ = r.Read(buf)
+		// Execution data from previous command can be used in current
+		input := string(buf)
+		fmt.Println("INPUT", input)
+		execRes := ""
+	*/
+	parts := strings.Fields(cmd)
+	switch parts[0] {
+	// Change directory
+	case "cd":
+		if len(parts) == 1 {
+			_, err := changeDirectory("")
+			if err != nil {
+				return fmt.Errorf("cd command failed: %w", err)
+			}
+			//	execRes = nDir
+		} else {
+			_, err := changeDirectory(parts[1])
+			if err != nil {
+				return fmt.Errorf("cd command failed: %w", err)
+			}
+			//	execRes = nDir
+		}
+		// Display current directory full path
+	case "pwd":
+		pwd()
+		// Write args from echo to SDTOUT
+	case "echo":
+		if len(parts) == 1 {
+			echo("")
+		} else {
+			echo(parts[1])
+		}
+		// Kill process with PID (at least try)
+	case "kill":
+		if len(parts) == 1 {
+			fmt.Println("Enter pid to kill as argument to use kill command")
+		} else {
+			pid, err := strconv.Atoi(parts[1])
+			if err != nil {
+				fmt.Println("Could not parse pid from args: ", err)
+				return fmt.Errorf("could not parse pid from args: %w", err)
+			}
+			err = killProcess(pid)
+			if err != nil {
+				return fmt.Errorf("could not kill process: %w", err)
+			}
+		}
+	case "ps":
+		err := getProcessInfo()
+		if err != nil {
+			return fmt.Errorf("could not get process info: %w", err)
+		}
+	case "forkexec":
+		id, err := forkExec()
+		if err != nil {
+			return fmt.Errorf("forkExec() error: %w", err)
+		}
+		fmt.Println("child process started, pid: ", id)
+		// If command could not be recognized => Print advice
+	default:
+		fmt.Println("Unknown command. Available: cd, pwd, echo <args>, -kill <args>, -ps")
+		return nil
+	}
+
+	//	w.Write([]byte(execRes))
+	return nil
+}
+
+/*
 func Execute(input chan string, done chan struct{}) {
 	for {
 		select {
 		//Checking input channel
 		case command := <-input:
+
 			// Separating command from args and trash
 			parts := strings.Fields(command)
 			switch parts[0] {
@@ -255,3 +407,4 @@ func Execute(input chan string, done chan struct{}) {
 		}
 	}
 }
+*/
