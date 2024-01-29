@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -189,6 +190,7 @@ type Process struct {
 }
 
 func getProcessInfo() {
+	r, w := io.Pipe()
 	matches, err := filepath.Glob("/proc/*/exe") // Processes are stored here i guess
 	if err != nil {
 		fmt.Println(err)
