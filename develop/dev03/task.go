@@ -255,6 +255,7 @@ func selectColumn(lines []string, index int) []string {
 	return lines
 }
 
+// SortFile rearranges strings in file by lexical or numerical rules
 func SortFile() {
 	// Checking if cmd arguments are present. If they aren't - Print usage advice
 	params := os.Args

@@ -14,7 +14,7 @@ func main() {
 	Cut()
 }
 
-// Execute cut formats input string data by columns depending on the delimeter
+// ExecuteCut formats input string data by columns depending on the delimeter
 func ExecuteCut(lines []string, indexes []int, delim *string, sepOnly bool) {
 	result := [][]string{}
 
@@ -56,7 +56,7 @@ func ExecuteCut(lines []string, indexes []int, delim *string, sepOnly bool) {
 	fmt.Printf("%s\n", output)
 }
 
-// Get data for cut execution
+// Cut gets data for cut Cut Execution function (kind of bad)
 func Cut() {
 	var raw string
 	for i := 1; i < len(os.Args); i++ {

@@ -15,7 +15,7 @@ import (
 	"github.com/Karanth1r3/l_2/develop/dev11/internal/storage"
 )
 
-func ConfigureRoute(h *httpapi.Handler) *http.ServeMux {
+func configureRoute(h *httpapi.Handler) *http.ServeMux {
 	mux := http.NewServeMux()
 	mux.Handle("/create_event", http.HandlerFunc(h.CreateEvent))
 	mux.Handle("/update_event", http.HandlerFunc(h.UpdateEvent))
@@ -39,7 +39,7 @@ func main() {
 	handler := httpapi.NewHandler(srvc)
 
 	// Configuring router
-	mux := ConfigureRoute(handler)
+	mux := configureRoute(handler)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()

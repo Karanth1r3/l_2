@@ -10,6 +10,7 @@ func main() {
 	PrintTime("0.beevik-ntp.pool.ntp.org")
 }
 
+// PrintTime prints current time using side ntp-lib
 func PrintTime(address string) (string, error) {
 	time, err := ntp.Time(address)
 	if err != nil {

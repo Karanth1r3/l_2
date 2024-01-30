@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -28,13 +27,13 @@ func main() {
 	wg := sync.WaitGroup{}
 	wg.Add(1)
 	//	<-stopChan // wait for SIGINT
-	go Read(&wg, input, done)
-	go CommandsLoop(input, done)
+	go read(&wg, input, done)
+	go commandsLoop(input, done)
 	wg.Wait()
 
 }
 
-func CheckChdir(path string) {
+func checkChdir(path string) {
 	err := os.Chdir(path)
 	if err != nil {
 		fmt.Println(err)
@@ -60,17 +59,17 @@ func changeDirectory(arg string) (newDir string, err error) {
 		if err != nil {
 			panic(err)
 		}
-		CheckChdir(home)
+		checkChdir(home)
 		// If arg is - => switch to parent directory
 	case "-":
 		parent := filepath.Dir(currentDir)
-		CheckChdir(parent)
+		checkChdir(parent)
 	default:
 		newPath, err := formDirectory(arg)
 		if err != nil {
 			return "", fmt.Errorf("could not form directory: %w", err)
 		}
-		CheckChdir(newPath)
+		checkChdir(newPath)
 	}
 	c, err := os.Getwd()
 	if err != nil {
@@ -107,7 +106,7 @@ func pwd() {
 	fmt.Println(currentDir)
 }
 
-func Read(wg *sync.WaitGroup, inputCh chan<- string, doneCh chan struct{}) {
+func read(wg *sync.WaitGroup, inputCh chan<- string, doneCh chan struct{}) {
 	for {
 		reader := bufio.NewReader(os.Stdin)
 		input, err := reader.ReadString('\n')
@@ -138,7 +137,7 @@ func killProcess(pid int) error {
 	err = process.Signal(syscall.Signal(0))
 	if err != nil {
 		fmt.Println(err)
-		return fmt.Errorf("PID %d returned %v \n", pid, err)
+		return fmt.Errorf("pid %d returned %v", pid, err)
 	}
 
 	if err := process.Kill(); err != nil {
@@ -179,45 +178,7 @@ func killProcess(pid int) error {
 	return nil
 }
 
-/*
-// https://github.com/mitchellh/go-ps/blob/master/process_unix.go - source of info
-func getProcesses() error {
-
-	// That's only a snapshot of a process "list" at the moment of function call
-	// Opening the folder with active processes
-	d, err := os.Open("/proc")
-	if err != nil {
-		return err
-	}
-	defer d.Close()
-
-	results := make([]string, 0, 50)
-	// Iterating through process files i guess (by names)
-	for {
-		names, err := d.Readdirnames(10)
-		if err == io.EOF { // If all files are read => break reading loop
-			break
-		}
-		if err != nil {
-			return err
-		}
-		// Processes start with digits, only need to include those files
-		for _, name := range names {
-			if name[0] < 0 && name[0] > '9' {
-				continue
-			}
-
-			// Ignore errors as processes may not exist anymore
-			pid, err := strconv.ParseInt(name, 10, 0)
-			if err != nil {
-				continue
-			}
-		}
-
-	}
-
-}
-*/
+// Process is simplified process abstraction with id and path to executable
 type Process struct {
 	pid  int
 	path string
@@ -267,8 +228,8 @@ func checkPipe(input string) (res []string) {
 	return strings.Split(input, "|")
 }
 
-func CommandsLoop(input chan string, done chan struct{}) {
-	r, w := io.Pipe()
+func commandsLoop(input chan string, done chan struct{}) {
+	//r, w := io.Pipe()
 	//defer w.Close()
 	for {
 		select {
@@ -276,7 +237,7 @@ func CommandsLoop(input chan string, done chan struct{}) {
 		case command := <-input:
 			cmds := checkPipe(command)
 			for _, cmd := range cmds {
-				Execute(cmd, r, w)
+				Execute(cmd)
 			}
 		case <-done:
 			return
@@ -285,7 +246,8 @@ func CommandsLoop(input chan string, done chan struct{}) {
 	}
 }
 
-func Execute(cmd string, r *io.PipeReader, w *io.PipeWriter) error {
+// Execute tries to execute string command by calling according func
+func Execute(cmd string) error {
 	/*
 		defer w.Close()
 		buf := make([]byte, 1024)

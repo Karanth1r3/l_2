@@ -31,6 +31,7 @@ func download(url, file string) error {
 	return nil
 }
 
+// Wget Downloads contet from response body
 func Wget(url string) error {
 
 	// Reading url from cmd args & forming filename with it
@@ -48,7 +49,7 @@ func Wget(url string) error {
 	}
 }
 
-func ParseArgs() ([]string, error) {
+func parseArgs() ([]string, error) {
 	// Checking cmd args, if there are none - print advise
 	args := os.Args
 	if len(args) == 1 {
@@ -59,7 +60,7 @@ func ParseArgs() ([]string, error) {
 }
 
 func main() {
-	args, err := ParseArgs()
+	args, err := parseArgs()
 	if err != nil {
 		log.Fatal(err)
 	}

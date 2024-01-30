@@ -29,6 +29,7 @@ func hasEqualRuneCount(s1, s2 string) bool {
 	return utf8.RuneCountInString(s1) == utf8.RuneCountInString(s2)
 }
 
+// GetAnagramGroups (dct *[]string) returns map[string][]string; k - first met word for anagram group, v - slice of anagrams for k
 func GetAnagramGroups(dct *[]string) (result map[string][]string) {
 	*dct = dictToLower(*dct)
 	result = make(map[string][]string)

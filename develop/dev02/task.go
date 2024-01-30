@@ -22,6 +22,7 @@ func loopChar(r rune, count int) []rune {
 	return res
 }
 
+// UnpackString finds numbers or escape symbols in string and tries to repeat char after number (number) times
 func UnpackString(s string) (string, error) {
 	result := make([]rune, 0)
 
