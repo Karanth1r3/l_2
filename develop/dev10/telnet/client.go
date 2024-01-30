@@ -59,6 +59,7 @@ func NewTelnetClient(host, port string, timeout time.Duration) (*TelnetClient, e
 		Conn:    conn,
 		Timeout: timeout,
 		EndCh:   make(chan struct{}),
+		MsgCh:   make(chan string),
 	}
 
 	ctx, c := context.WithCancel(context.Background())
@@ -155,16 +156,18 @@ func (tc *TelnetClient) LaunchReadWrite() {
 
 func (tc *TelnetClient) readLoop() {
 	buf := make([]byte, 1024)
-	// Infinite loop
+	// Infinite loop for handling done signal or write loop
 	for {
 		select {
 		case <-tc.ctx.Done():
 			log.Println("read stopped")
 			break
 		default:
+			// Setting deadline for each read attempt
 			if err := tc.Conn.SetReadDeadline(time.Now().Add(tc.Timeout)); err != nil {
 				log.Println(err)
 			}
+			// Reading data from socket
 			n, err := tc.Conn.Read(buf)
 			if err != nil {
 				if err == io.EOF {
@@ -176,9 +179,11 @@ func (tc *TelnetClient) readLoop() {
 					log.Println(err)
 				}
 			}
+			// If no data is read => no actions
 			if n == 0 {
 				break
 			}
+			// If data sent from the socket are ok => print it in stdout
 			bs := buf[:n]
 			if len(bs) != 0 {
 				fmt.Print(string(bs))
@@ -189,7 +194,8 @@ func (tc *TelnetClient) readLoop() {
 }
 
 func (tc *TelnetClient) writeLoop() {
-	go func(stdin chan<- string) {
+	// Handling input from stdin & sending it to channel
+	go func(msgCh chan<- string) {
 		reader := bufio.NewReader(os.Stdin)
 		for {
 			s, err := reader.ReadString('\n')
@@ -201,26 +207,28 @@ func (tc *TelnetClient) writeLoop() {
 				}
 				log.Println(err)
 			}
-			stdin <- s
+			msgCh <- s
 		}
 	}(tc.MsgCh)
 
 OUTER:
+	// If client context is done (this happens when ctrl d detected) => stop writing loop
 	for {
 		select {
 		case <-tc.ctx.Done():
 			log.Print("Exiting from writing...")
 			break OUTER
 		default:
-
+			// Loop for reading from msgChannel (which is storing string from stdin) and writing that data to server
 		STDIN:
 			for {
 				select {
-				case stdin, ok := <-tc.MsgCh:
+				case msg, ok := <-tc.MsgCh:
+					// If msgChan is closed => no actions
 					if !ok {
 						break STDIN
 					}
-					if _, err := tc.Conn.Write([]byte(stdin)); err != nil {
+					if _, err := tc.Conn.Write([]byte(msg)); err != nil {
 						log.Println(err)
 					}
 					// wait deadline for input
