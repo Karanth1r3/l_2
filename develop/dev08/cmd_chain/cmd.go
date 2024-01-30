@@ -48,14 +48,27 @@ func parseCMDArgs(body string) []string {
 	return strings.Fields(body)
 }
 
-func handleInput() {
-	var s string
-	fmt.Scan(&s)
+// abstract loop
+func CommandLoop() {
+	// for {...
+	// read()
+	// handleInput()
+	// ...}
+}
+
+// getting input from command loop
+func handleInput(msg chan string) {
+	s := <-msg
 	cmdb := parseArgs(s)
 	cmds := make([]CMD, len(cmdb))
 	formCommandPipe(cmds, cmdb)
 	// Start the chain
 	cmds[0].Execute(cmds[0].inputData)
+}
+
+func read(msg chan string) {
+	// stdin input
+	msg <- "stdinInput"
 }
 
 func parseArgsWithoutCMDName(s string) []string {

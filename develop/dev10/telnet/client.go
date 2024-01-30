@@ -1,10 +1,16 @@
 package telnet
 
 import (
+	"bufio"
+	"context"
 	"errors"
 	"fmt"
 	"io"
+	"log"
 	"net"
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 )
 
@@ -15,6 +21,10 @@ type (
 	TelnetClient struct {
 		Conn    net.Conn
 		Timeout time.Duration
+		EndCh   chan struct{}
+		MsgCh   chan string
+		ctx     context.Context
+		cancel  context.CancelFunc
 	}
 )
 
@@ -37,17 +47,44 @@ func Dial(address string, port string) (*TelnetClient, error) {
 
 // CTOR for telnet client.
 func NewTelnetClient(host, port string, timeout time.Duration) (*TelnetClient, error) {
-
+	// If no connect to the server => break conn on timeout
+	dialer := &net.Dialer{Timeout: timeout}
 	// conn, err := net.Dial("tcp", fmt.Sprintf("%s:%s", host, port))
-	conn, err := net.Dial("tcp", fmt.Sprintf("%s:%s", host, port))
+	conn, err := dialer.Dial("tcp", fmt.Sprintf("%s:%s", host, port))
 	if err != nil {
 		return nil, err
 	}
 
-	return &TelnetClient{
+	tc := &TelnetClient{
 		Conn:    conn,
 		Timeout: timeout,
-	}, nil
+		EndCh:   make(chan struct{}),
+	}
+
+	ctx, c := context.WithCancel(context.Background())
+	tc.ctx = ctx
+	tc.cancel = c
+	return tc, nil
+}
+
+func (tc *TelnetClient) stop() error {
+	tc.cancel()
+	time.Sleep(time.Second)
+	if err := tc.Close(); err != nil {
+		return fmt.Errorf("client connection close error: %w", err)
+	}
+	return nil
+}
+
+func (tc *TelnetClient) WaitOSKill() {
+	go func() {
+		ch := make(chan os.Signal, 1)
+		signal.Notify(ch, os.Interrupt, syscall.SIGTERM)
+		// If receiving ctrl d / ctrl c signal => tc.endchannel will be triggered after that. read/write loop will be linked to endCh
+		sig := <-ch
+		fmt.Println("\nGot signal:", sig)
+		tc.EndCh <- struct{}{}
+	}()
 }
 
 // Close
@@ -77,6 +114,15 @@ func (tc *TelnetClient) SetTimeout(timeout int) {
 	}
 }
 
+func (tc *TelnetClient) Cancel() error {
+	tc.cancel()
+	time.Sleep(time.Second)
+	if err := tc.Close(); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (tc *TelnetClient) Read() ([]byte, error) {
 	// Read response from connection.
 	buf := make([]byte, bufSize)
@@ -102,37 +148,87 @@ func (tc *TelnetClient) Read() ([]byte, error) {
 	return buf[:n], nil
 }
 
-/*
-func main() {
-
-	tc, err := NewTelnetClient("yahoo.com", "8085", time.Second*5)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer tc.Close()
-
-	err = tc.Write([]byte("\n"))
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	resp, err := tc.Read()
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(string(resp))
-
-	err = tc.Write([]byte("qqck"))
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(string(resp))
-
+func (tc *TelnetClient) LaunchReadWrite() {
+	go tc.readLoop()
+	go tc.writeLoop()
 }
-*/
+
+func (tc *TelnetClient) readLoop() {
+	buf := make([]byte, 1024)
+	// Infinite loop
+	for {
+		select {
+		case <-tc.ctx.Done():
+			log.Println("read stopped")
+			break
+		default:
+			if err := tc.Conn.SetReadDeadline(time.Now().Add(tc.Timeout)); err != nil {
+				log.Println(err)
+			}
+			n, err := tc.Conn.Read(buf)
+			if err != nil {
+				if err == io.EOF {
+					log.Println("Remote host aborted connection, exiting from reading...")
+					tc.EndCh <- struct{}{}
+					break
+				}
+				if netErr, ok := err.(net.Error); ok && !netErr.Timeout() {
+					log.Println(err)
+				}
+			}
+			if n == 0 {
+				break
+			}
+			bs := buf[:n]
+			if len(bs) != 0 {
+				fmt.Print(string(bs))
+			}
+
+		}
+	}
+}
+
+func (tc *TelnetClient) writeLoop() {
+	go func(stdin chan<- string) {
+		reader := bufio.NewReader(os.Stdin)
+		for {
+			s, err := reader.ReadString('\n')
+			if err != nil {
+				if err == io.EOF {
+					log.Print("Ctrl+D detected, aborting...")
+					tc.EndCh <- struct{}{}
+					return
+				}
+				log.Println(err)
+			}
+			stdin <- s
+		}
+	}(tc.MsgCh)
+
+OUTER:
+	for {
+		select {
+		case <-tc.ctx.Done():
+			log.Print("Exiting from writing...")
+			break OUTER
+		default:
+
+		STDIN:
+			for {
+				select {
+				case stdin, ok := <-tc.MsgCh:
+					if !ok {
+						break STDIN
+					}
+					if _, err := tc.Conn.Write([]byte(stdin)); err != nil {
+						log.Println(err)
+					}
+					// wait deadline for input
+				case <-time.After(time.Second):
+					break STDIN
+				}
+			}
+		}
+	}
+	log.Println("...exited from writing")
+}

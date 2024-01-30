@@ -65,20 +65,15 @@ func main() {
 	defer tc.Close()
 	//tc.SetTimeout(5)
 	//msgCh := make(chan string)
+	endCh := tc.EndCh
+	tc.LaunchReadWrite()
 
-	err = tc.Write([]byte("w\n"))
+	tc.WaitOSKill()
+	<-endCh
 
-	if err != nil {
-		log.Fatal(err)
+	if err := tc.Cancel(); err != nil {
+		log.Println(err)
 	}
-	fmt.Println("written")
 
-	_, err = tc.Read()
-
-	if err != nil {
-		fmt.Println("read error", err)
-		os.Exit(1)
-	}
-	fmt.Println("connected to:", tc.Conn.RemoteAddr())
-
+	time.Sleep(time.Second)
 }
