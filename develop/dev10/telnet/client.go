@@ -224,14 +224,14 @@ OUTER:
 			for {
 				select {
 				case msg, ok := <-tc.MsgCh:
-					// If msgChan is closed => no actions
+					// If message is empty
 					if !ok {
 						break STDIN
 					}
 					if _, err := tc.Conn.Write([]byte(msg)); err != nil {
 						log.Println(err)
 					}
-					// wait deadline for input
+					// Wait deadline for input
 				case <-time.After(time.Second):
 					break STDIN
 				}

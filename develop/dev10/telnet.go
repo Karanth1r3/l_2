@@ -51,29 +51,35 @@ func main() {
 	if err != nil {
 		log.Fatal("could not parse timeout", err)
 	}
-	//fmt.Println(len(ts))
 	timeout, err := getDur(t, timeVal)
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	// Launching client
 	tc, err := telnet.NewTelnetClient(host, port, timeout)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(tc.Conn.RemoteAddr())
+	fmt.Println("Connected to", tc.Conn.RemoteAddr())
 	defer tc.Close()
 	//tc.SetTimeout(5)
 	//msgCh := make(chan string)
+
+	// Channel reacts after os signals are received in client implementation
 	endCh := tc.EndCh
+	// Launching client read-write loop (goroutine with goroutines)
 	tc.LaunchReadWrite()
 
+	// There is goroutine waiting for os signal and then sending data to endCh
 	tc.WaitOSKill()
+	// For blocking main until signal is received
 	<-endCh
 
+	// If data from endChannel received => stop read-write & close connection
 	if err := tc.Cancel(); err != nil {
 		log.Println(err)
 	}
-
+	// Cleanup time for sockets? (i guess)
 	time.Sleep(time.Second)
 }
