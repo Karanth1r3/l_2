@@ -15,7 +15,7 @@ import (
 	"github.com/Karanth1r3/l_2/develop/dev11/internal/storage"
 )
 
-func ConfigureRoute(h *httpapi.Handler) {
+func ConfigureRoute(h *httpapi.Handler) *http.ServeMux {
 	mux := http.NewServeMux()
 	mux.Handle("/create_event", http.HandlerFunc(h.CreateEvent))
 	mux.Handle("/update_event", http.HandlerFunc(h.UpdateEvent))
@@ -23,6 +23,7 @@ func ConfigureRoute(h *httpapi.Handler) {
 	mux.Handle("/events_for_day", http.HandlerFunc(h.GetEventsForDay))
 	mux.Handle("/events_for_week", http.HandlerFunc(h.GetEventsForWeek))
 	mux.Handle("/events_for_month", http.HandlerFunc(h.GetEventsForMonth))
+	return mux
 }
 
 func main() {
@@ -38,14 +39,16 @@ func main() {
 	handler := httpapi.NewHandler(srvc)
 
 	// Configuring router
-	ConfigureRoute(handler)
+	mux := ConfigureRoute(handler)
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
 	server := http.Server{
 		Addr: fmt.Sprintf(":%d", cfg.HTTP.Port),
-		//Handler: httpapi.NewLogMW(mux),
+		// Middleware logger is set as first handler for all ... individual handlers in router this way.
+		// Because logger should track all requests. If Middleware is required for individual handler - it can be passed to mux.Handle wrapping original handler
+		Handler: httpapi.NewLogMW(mux),
 	}
 	// Launching server in separate goroutine
 	go func() {
