@@ -125,7 +125,7 @@ func read(wg *sync.WaitGroup, inputCh chan<- string, doneCh chan struct{}) {
 	}
 }
 
-// WORKS ONLY IF BUILD FOR FUCK SAKE........................................
+// WORKS ONLY IF BUILD xd........................................
 func killProcess(pid int) error {
 	process, err := os.FindProcess(pid)
 	/*
