@@ -24,38 +24,42 @@ func main() {
 	ParseFlags(os.Args)
 }
 
-func (w *Wgetter) ParseFlags(call []string) {
+func (w *Wgetter) ParseFlags(call []string) error {
 
 	var link string
 
 	if len(call) == 1 {
 		fmt.Println("Usage: /wget (flags) link")
-		return
+		return fmt.Errorf("not enough arguments")
 	}
 	for _, elem := range call {
-		if elem[0] != "-" {
+		if elem[0] != '-' {
 			link = elem
 		}
 	}
 	path := flag.String("f", "", "Path of the saved file")
 
 	flag.Parse()
-	if path != "" {
-		opts.fileName = path
+	if *path != "" {
+		w.filePath = *path
 	}
+	return nil
 }
 
-/*
 func WGetCli(call []string) error {
 	//Piping
 	inPipe := os.Stdin
 	outPipe := os.Stdout
 	errPipe := os.Stderr
-	wGetter := new
+	var wget Wgetter
+	err := wget.ParseFlags(os.Args)
+	if err != nil {
+		return err
+	}
+	return wget.Exec(inPipe, outPipe, errPipe)
 }
-*/
 
-func (w *Wgetter) Exec(inPipe io.Reader, outPipe io.Writer, errPipe io.Writer) (error, int) {
+func (w *Wgetter) Exec(inPipe io.Reader, outPipe io.Writer, errPipe io.Writer) error {
 	if len(w.links) > 0 {
 		for _, link := range w.links {
 			err := WGetOne(link, nil)
