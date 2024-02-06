@@ -15,9 +15,10 @@ import (
 
 type (
 	Wgetter struct {
-		link         string
-		filePath     string
-		visitedLinks map[string]bool
+		link          string
+		internalLinks []string
+		filePath      string
+		visitedLinks  map[string]bool
 	}
 )
 
@@ -43,7 +44,7 @@ func crawl(link string, opts Wgetter) error {
 	defer resp.Body.Close()
 
 	linkCounter := 0
-	for _, href := range getLinks(resp.Body) {
+	for _, href := range opts.getLinks(resp.Body) {
 		// Only internal links
 		if len(href) > 0 && string(href[0]) == "/" && href != link {
 			//Skip external links which start with //
@@ -62,8 +63,8 @@ func crawl(link string, opts Wgetter) error {
 	return nil
 }
 
-// Func for getting links recursively (if recursive functionality will be added)
-func getLinks(body io.Reader) []string {
+// TODO - adapt it to wget .Func for getting links recursively (if recursive functionality will be added)
+func (w *Wgetter) getLinks(body io.Reader) []string {
 	var links []string
 	x := html.NewTokenizer(body)
 	for {
@@ -82,6 +83,7 @@ func getLinks(body io.Reader) []string {
 					// If token is link => add it
 					if attr.Key == "href" {
 						links = append(links, attr.Val)
+						w.internalLinks = append(w.internalLinks, attr.Val)
 					}
 				}
 			}
