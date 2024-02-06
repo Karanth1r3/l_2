@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"os"
 	"strings"
 )
@@ -21,7 +22,10 @@ type (
 )
 
 func main() {
-	ParseFlags(os.Args)
+	err := WGetCli(os.Args)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func (w *Wgetter) ParseFlags(call []string) error {
@@ -62,7 +66,7 @@ func WGetCli(call []string) error {
 func (w *Wgetter) Exec(inPipe io.Reader, outPipe io.Writer, errPipe io.Writer) error {
 	if len(w.links) > 0 {
 		for _, link := range w.links {
-			err := WGetOne(link, nil)
+			err := WGetOne(link, w)
 			if err != nil {
 				return err, 1
 			}
@@ -76,9 +80,9 @@ func (w *Wgetter) Exec(inPipe io.Reader, outPipe io.Writer, errPipe io.Writer) e
 		for hasMoreLine {
 			line, hasMoreLine, err = bio.ReadLine()
 			if err == nil {
-				err = WGetOne(strings.TrimSpace(string(line)), nil)
+				err = WGetOne(strings.TrimSpace(string(line)), w)
 				if err != nil {
-					return err, 1
+					return err
 				}
 			} else {
 				hasMoreLine = false
